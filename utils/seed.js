@@ -11,14 +11,40 @@ connection.once('open', async () => {
 
 
   // Add courses to the collection and await the results
-  await DateIdeas.collection.insertOne({
-    dateIdeaName: 'hiking',
-    tags: [
-      {tagName: 'outdoors'},
-      {tagName: '$'},
-      {tagName: 'notLongDistance'},
-    ],
-  });
+  await DateIdeas.collection.insertMany([
+    {
+      dateIdeaName: 'hiking',
+      tags: [
+        {tagName: 'outdoors'},
+        {tagName: '$'},
+        {tagName: 'notLongDistance'},
+      ],
+    },
+    {
+      dateIdeaName: 'picnic',
+      tags: [
+        {tagName: 'outdoors'},
+        {tagName: '$$'},
+        {tagName: 'notLongDistance'},
+      ],
+    },
+    {
+      dateIdeaName: 'zoo',
+      tags: [
+        {tagName: 'outdoors'},
+        {tagName: '$$'},
+        {tagName: 'notLongDistance'},
+      ],
+    },
+    {
+      dateIdeaName: 'make dessert',
+      tags: [
+        {tagName: 'indoors'},
+        {tagName: '$$'},
+        {tagName: 'notLongDistance'},
+      ],
+    },
+]);
 
   // Log out the seed data to indicate what should appear in the database
   console.info('Seeding complete! 🌱');
