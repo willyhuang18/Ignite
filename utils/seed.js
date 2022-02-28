@@ -41,7 +41,15 @@ connection.once('open', async () => {
       tags: [
         {tagName: 'indoors'},
         {tagName: '$$'},
-        {tagName: 'notLongDistance'},
+        {tagName: 'longDistance'},
+      ],
+    },
+    {
+      dateIdeaName: 'do the question of the day',
+      tags: [
+        {tagName: 'indoors'},
+        {tagName: '$'},
+        {tagName: 'longDistance'},
       ],
     },
 ]);
