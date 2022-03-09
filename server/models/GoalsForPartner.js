@@ -37,3 +37,9 @@ const partnerGoalsSchema = new Schema(
 // .virtual('GoalCounter')
 // //getter
 // .get()
+
+
+// Initialize our User model
+const partnerGoals = model('partnerGoals', partnerGoalsSchema);
+
+module.exports = partnerGoals;
