@@ -50,7 +50,31 @@
         "goalTitle": "Play Footsie",
         "userRef":"389324",
         "loveFilter": "Physical Touch"
-    }
+    },
     ------
-
+    {
+        "goalTitle": "Write them a Poem",
+        "userRef":"389324",
+        "loveFilter": "Words of Affirmation"
+    },
+    {
+        "goalTitle": "Sing Them a Song",
+        "userRef":"389324",
+        "loveFilter": "Words of Affirmation"
+    },
+    {
+        "goalTitle": "10 reasons why I adore you",
+        "userRef":"389324",
+        "loveFilter": "Words of Affirmation"
+    },
+    {
+        "goalTitle": "Random Letter",
+        "userRef":"389324",
+        "loveFilter": "Words of Affirmation"
+    },
+    {
+        "goalTitle": "Compliment partner",
+        "userRef":"389324",
+        "loveFilter": "Words of Affirmation"
+    },
 ]
