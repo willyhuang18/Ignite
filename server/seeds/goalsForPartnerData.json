@@ -104,4 +104,30 @@
         "loveFilter": "Quality Time"
     },
     -----
+    {
+        "goalTitle": "Jewelry for Them",
+        "userRef":"389324",
+        "loveFilter": "Gift Giving"
+    },
+    {
+        "goalTitle": "Give them FLowers",
+        "userRef":"389324",
+        "loveFilter": "Gift Giving"
+    },
+    {
+        "goalTitle": "Handmade Gift",
+        "userRef":"389324",
+        "loveFilter": "Gift Giving"
+    },
+    {
+        "goalTitle": "Chocolate Bouquet",
+        "userRef":"389324",
+        "loveFilter": "Gift Giving"
+    },
+    {
+        "goalTitle": "Purchase Them an Outfit",
+        "userRef":"389324",
+        "loveFilter": "Gift Giving"
+    }
+    
 ]
