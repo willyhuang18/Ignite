@@ -77,4 +77,31 @@
         "userRef":"389324",
         "loveFilter": "Words of Affirmation"
     },
+    ------
+    {
+        "goalTitle": "Go on a hike",
+        "userRef":"389324",
+        "loveFilter": "Quality Time"
+    },
+    {
+        "goalTitle": "Go out to eat",
+        "userRef":"389324",
+        "loveFilter": "Quality Time"
+    },
+    {
+        "goalTitle": "Watch Moive Together",
+        "userRef":"389324",
+        "loveFilter": "Quality Time"
+    },
+    {
+        "goalTitle": "Game Night",
+        "userRef":"389324",
+        "loveFilter": "Quality Time"
+    },
+    {
+        "goalTitle": "Road Trip",
+        "userRef":"389324",
+        "loveFilter": "Quality Time"
+    },
+    -----
 ]
