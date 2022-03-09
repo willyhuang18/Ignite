@@ -15,7 +15,12 @@ const partnerGoalsSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "User",
         },
-
+        // populating subdocument
+        loveFilter:{
+            type: String,
+            required: false,
+            maxlength: 50,
+        }
     },
     // Mongoose supports transforming Objects after querying MongoDb: toJSON 
     // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
