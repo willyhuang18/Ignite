@@ -1,7 +1,7 @@
 
 [
     {
-        "goalTitle": "Massage",
+        "goalTitle": "Get Groceries",
         "userRef":"389324",
         "loveFilter": "Acts of Service"
     },
@@ -24,6 +24,33 @@
         "goalTitle": "Clean house",
         "userRef":"389324",
         "loveFilter": "Acts of Service"
+    },
+    -----
+    {
+        "goalTitle": "Cuddle More",
+        "userRef":"389324",
+        "loveFilter": "Physical Touch"
+    },
+    {
+        "goalTitle": "Long Hug",
+        "userRef":"389324",
+        "loveFilter": "Physical Touch"
+    },
+    {
+        "goalTitle": "Massage",
+        "userRef":"389324",
+        "loveFilter": "Physical Touch"
+    },
+    {
+        "goalTitle": "Hold Hands",
+        "userRef":"389324",
+        "loveFilter": "Physical Touch"
+    },
+    {
+        "goalTitle": "Play Footsie",
+        "userRef":"389324",
+        "loveFilter": "Physical Touch"
     }
+    ------
 
 ]
