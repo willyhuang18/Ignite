@@ -1,0 +1,31 @@
+:root{
+    --main-color:rgb(100, 31, 31);
+  }
+
+.heading{
+    font-size: 9rem;
+    text-transform: uppercase;
+    color:transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+  }
+
+.heading span{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color:var(--main-color);
+    font-size: 3rem;
+  }
+  
+  
+footer {
+    background-color: #ef8172;
+}
+.social-icon {
+  margin: 20px 10px;
+}
