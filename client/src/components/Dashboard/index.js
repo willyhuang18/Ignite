@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+// import { useMutation } from '@apollo/client';
 import Card from '../Card/Card'
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+// import { ADD_THOUGHT } from '../../utils/mutations';
+// import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import Question from '../Question/Question';
 
