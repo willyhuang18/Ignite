@@ -12,8 +12,9 @@ const GoalsForPartnerSchema = new Schema(
             maxlength: 100,
         },
         userRef:{
-            type: Schema.Types.ObjectId,
-            ref: "User",
+            // type: Schema.Types.ObjectId,
+            // ref: "User",
+            type: Number
         },
         // populating subdocument
         loveFilter:{
