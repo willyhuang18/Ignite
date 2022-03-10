@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
-    questionnaire: [Questionnaire]
+   
   }
 
   type QuestionOfTheDay {
@@ -37,3 +37,4 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
+//  questionnaire: [Questionnaire]
