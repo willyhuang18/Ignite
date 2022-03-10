@@ -19,12 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 2,
   },
-  questionnaire: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Questionnaire',
-    },
-  ],
+  // questionnaire: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Questionnaire',
+  //   },
+  // ],
 });
 
 userSchema.pre('save', async function (next) {
