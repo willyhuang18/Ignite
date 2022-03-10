@@ -1,8 +1,8 @@
 // importing mongoose
-const { Schema, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 // Schema for Partner Goals
-const partnerGoalsSchema = new Schema(
+const GoalsForPartnerSchema = new Schema(
     // properties
     {
         goalTitle:{
@@ -40,6 +40,6 @@ const partnerGoalsSchema = new Schema(
 
 
 // Initialize our User model
-const partnerGoals = model('partnerGoals', partnerGoalsSchema);
+const GoalsForPartner = model('GoalsForPartner', GoalsForPartnerSchema);
 
-module.exports = partnerGoals;
+module.exports = GoalsForPartner;
