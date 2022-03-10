@@ -20,7 +20,7 @@ const GoalsForPartnerSchema = new Schema(
         loveFilter:{
             type: String,
             required: false,
-            maxlength: 50,
+            maxlength: 100,
         }
     },
     // Mongoose supports transforming Objects after querying MongoDb: toJSON 
