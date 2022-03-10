@@ -22,7 +22,13 @@ export const QUERY_questionOfTheDay = gql`
   }
  `;
 
- 
+ export const QUERY_GoalsForPartner= gql`
+ query GFP {
+  _id
+  goalTitle
+  loveFilter
+ }
+ `;
 
 export const QUERY_ME = gql`
   query me {
