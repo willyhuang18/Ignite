@@ -4,7 +4,7 @@ const typeDefs = gql `
     type GoalsForPartner {
        _id: ID
        goalTitle: String
-       userRef: [User]
+       userRef: Int
        LoveFilter: String 
     }
 
