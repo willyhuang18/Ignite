@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, QuestionOfTheDay } = require('../models');
+const { User, QuestionOfTheDay, GoalsForPartner } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -18,6 +18,9 @@ const resolvers = {
         return User.findOne({ _id: context.user._id }).populate('questionnaire');
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+    GFP: async ()=> {
+      return await GoalsForPartner.find({});
     },
   },
 
@@ -48,3 +51,6 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
+
+

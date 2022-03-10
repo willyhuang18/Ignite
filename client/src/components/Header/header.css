@@ -1,0 +1,112 @@
+
+  h1 .span {
+    height: 300px;
+    width: 100%;
+    background-image: url("https://dl.dropbox.com/s/r2s8s2r17wi0xm6/flame.png?dl=0");
+    background-position: 0 -1000px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fire 4s linear infinite;
+  }
+  
+  .flame h1 {
+    color: #fff;
+    font-size: 80px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, cursive;
+    font-weight: bolder;
+  }
+  
+  @keyframes fire {
+    0% {
+      background-position: 0% -50%;
+    }
+    100% {
+      background-position: 0% -25%;
+    }
+  }
+  .fire{
+      height: 100px;
+      width: 100px;
+      background-color: none;
+  }
+
+.header a {
+    position: relative;
+    padding: 20px 50px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 40px;
+    background-color:rgba(146, 53, 53, 0.5) ;
+  }
+  
+  .header  a span {
+    position: relative;
+    color: #fff;
+    font-family: Arial;
+    letter-spacing: 3px;
+    z-index: 1;
+  }
+  
+ a .liquid {
+    top: -80px;
+    left: 0;
+    background: #6f373c;
+    box-shadow: inset 0 0 50px rgba(146, 53, 53, 0.5);
+    transition: .5s;
+  }
+  
+a .liquid::after,
+a .liquid::before {
+    content: '';
+    width: 100%;
+    height: 300%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: rgb(196, 54, 54);
+  }
+  
+a .liquid::before {
+    
+    border-radius: 45%;
+    background: rgb(196, 54, 54);
+    animation: animate 5s linear infinite;
+  }
+  
+a .liquid::after {
+    
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+  }
+  
+a:hover .liquid{
+    top: -120px;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+
+  .start{
+    position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Luxurious Roman', cursive;;
+  }
+
+  #main{
+      height: 900px;
+      background-image:url('https://hips.hearstapps.com/hmg-prod/images/love-and-care-my-city-royalty-free-image-1616634469.');
+      background-size: contain;
+  }

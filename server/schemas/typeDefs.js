@@ -14,11 +14,19 @@ const typeDefs = gql`
     question: String!
   }
 
+  type GoalsForPartner {
+       _id: ID
+       goalTitle: String
+       loveFilter: String 
+       userRef: Int
+  }
+
   type Query {
     users: [User]
     user(username: String!): User
     questionOfTheDay: [QuestionOfTheDay]
     me: User
+    GFP: [GoalsForPartner]
   }
 
   type Mutation {
@@ -28,3 +36,4 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
