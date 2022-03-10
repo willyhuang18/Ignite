@@ -1,129 +1,102 @@
-
 [
-    {
-        "goalTitle": "Get Groceries",
-        "userRef": 389324,
-        "loveFilter": "Acts of Service"
-    },
-    {
-        "goalTitle": "Make Breakfast",
-        "userRef": 389324,
-        "loveFilter": "Acts of Service"
-    },
-    {
-        "goalTitle": "Wash Dishes",
-        "userRef": 389324,
-        "loveFilter": "Acts of Service"
-    },
-    {
-        "goalTitle": "Make Dinner",
-        "userRef": 389324,
-        "loveFilter": "Acts of Service"
-    },
-    {
-        "goalTitle": "Clean house",
-        "userRef": 389324,
-        "loveFilter": "Acts of Service"
-    },
-    {
-        "goalTitle": "Cuddle More",
-        "userRef": 389324,
-        "loveFilter": "Physical Touch"
-    },
-    {
-        "goalTitle": "Long Hug",
-        "userRef": 389324,
-        "loveFilter": "Physical Touch"
-    },
-    {
-        "goalTitle": "Massage",
-        "userRef": 389324,
-        "loveFilter": "Physical Touch"
-    },
-    {
-        "goalTitle": "Hold Hands",
-        "userRef": 389324,
-        "loveFilter": "Physical Touch"
-    },
-    {
-        "goalTitle": "Play Footsie",
-        "userRef": 389324,
-        "loveFilter": "Physical Touch"
-    },
-    {
-        "goalTitle": "Write them a Poem",
-        "userRef": 389324,
-        "loveFilter": "Words of Affirmation"
-    },
-    {
-        "goalTitle": "Sing Them a Song",
-        "userRef": 389324,
-        "loveFilter": "Words of Affirmation"
-    },
-    {
-        "goalTitle": "10 reasons why I adore you",
-        "userRef":389324,
-        "loveFilter": "Words of Affirmation"
-    },
-    {
-        "goalTitle": "Random Letter",
-        "userRef":389324,
-        "loveFilter": "Words of Affirmation"
-    },
-    {
-        "goalTitle": "Compliment partner",
-        "userRef":389324,
-        "loveFilter": "Words of Affirmation"
-    },
-    {
-        "goalTitle": "Go on a hike",
-        "userRef":389324,
-        "loveFilter": "Quality Time"
-    },
-    {
-        "goalTitle": "Go out to eat",
-        "userRef":389324,
-        "loveFilter": "Quality Time"
-    },
-    {
-        "goalTitle": "Watch Moive Together",
-        "userRef":389324,
-        "loveFilter": "Quality Time"
-    },
-    {
-        "goalTitle": "Game Night",
-        "userRef":389324,
-        "loveFilter": "Quality Time"
-    },
-    {
-        "goalTitle": "Road Trip",
-        "userRef":389324,
-        "loveFilter": "Quality Time"
-    },
-    {
-        "goalTitle": "Jewelry for Them",
-        "userRef":389324,
-        "loveFilter": "Gift Giving"
-    },
-    {
-        "goalTitle": "Give them FLowers",
-        "userRef":389324,
-        "loveFilter": "Gift Giving"
-    },
-    {
-        "goalTitle": "Handmade Gift",
-        "userRef":389324,
-        "loveFilter": "Gift Giving"
-    },
-    {
-        "goalTitle": "Chocolate Bouquet",
-        "userRef":389324,
-        "loveFilter": "Gift Giving"
-    },
-    {
-        "goalTitle": "Purchase Them an Outfit",
-        "userRef":389324,
-        "loveFilter": "Gift Giving"
-    }
-    
+  {
+    "goalTitle": "Get Groceries",
+    "loveFilter": "Acts of Service"
+  },
+  {
+    "goalTitle": "Make Breakfast",
+    "loveFilter": "Acts of Service"
+  },
+  {
+    "goalTitle": "Wash Dishes",
+    "loveFilter": "Acts of Service"
+  },
+  {
+    "goalTitle": "Make Dinner",
+    "loveFilter": "Acts of Service"
+  },
+  {
+    "goalTitle": "Clean house",
+    "loveFilter": "Acts of Service"
+  },
+  {
+    "goalTitle": "Cuddle More",
+    "loveFilter": "Physical Touch"
+  },
+  {
+    "goalTitle": "Long Hug",
+    "loveFilter": "Physical Touch"
+  },
+  {
+    "goalTitle": "Massage",
+    "loveFilter": "Physical Touch"
+  },
+  {
+    "goalTitle": "Hold Hands",
+    "loveFilter": "Physical Touch"
+  },
+  {
+    "goalTitle": "Play Footsie",
+    "loveFilter": "Physical Touch"
+  },
+  {
+    "goalTitle": "Write them a Poem",
+    "loveFilter": "Words of Affirmation"
+  },
+  {
+    "goalTitle": "Sing Them a Song",
+    "loveFilter": "Words of Affirmation"
+  },
+  {
+    "goalTitle": "10 reasons why I adore you",
+    "loveFilter": "Words of Affirmation"
+  },
+  {
+    "goalTitle": "Random Letter",
+    "loveFilter": "Words of Affirmation"
+  },
+  {
+    "goalTitle": "Compliment partner",
+    "loveFilter": "Words of Affirmation"
+  },
+  {
+    "goalTitle": "Go on a hike",
+    "loveFilter": "Quality Time"
+  },
+  {
+    "goalTitle": "Go out to eat",
+    "loveFilter": "Quality Time"
+  },
+  {
+    "goalTitle": "Watch Moive Together",
+    "loveFilter": "Quality Time"
+  },
+  {
+    "goalTitle": "Game Night",
+    "loveFilter": "Quality Time"
+  },
+  {
+    "goalTitle": "Road Trip",
+    "loveFilter": "Quality Time"
+  },
+  {
+    "goalTitle": "Jewelry for Them",
+    "loveFilter": "Gift Giving"
+  },
+  {
+    "goalTitle": "Give them FLowers",
+    "loveFilter": "Gift Giving"
+  },
+  {
+    "goalTitle": "Handmade Gift",
+    "loveFilter": "Gift Giving"
+  },
+  {
+    "goalTitle": "Chocolate Bouquet",
+    "loveFilter": "Gift Giving"
+  },
+  {
+    "goalTitle": "Purchase Them an Outfit",
+    "loveFilter": "Gift Giving"
+  }
 ]

@@ -18,7 +18,7 @@ const typeDefs = gql`
        _id: ID
        goalTitle: String
        loveFilter: String 
-       userRef: Int
+       userRef: User
   }
 
   type Query {
