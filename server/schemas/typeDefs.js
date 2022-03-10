@@ -8,7 +8,9 @@ const typeDefs = gql `
        LoveFilter: String 
     }
 
-
+    type Query{
+        GFP: [GoalsForPartner]
+    }
 
 `;
 
