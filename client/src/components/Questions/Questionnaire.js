@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import $ from 'jquery'
 import './Questionnaire.css'
 
 
 export default function Questionnaire() {
-
+    const [ selectedQuestion, setSelectedQuestion ] = useState(0);
     // create a variable for each love type
     // display & iterate through each question
     // if the user selects option1, sum 1 to PT variable, etc.
@@ -69,6 +69,13 @@ export default function Questionnaire() {
         }
     ]
     
+    function previousQuestion() {
+        setSelectedQuestion(selectedQuestion - 1);
+    }
+
+    function nextQuestion() {
+        setSelectedQuestion(selectedQuestion + 1);
+    }
 console.log(questions)
     return (
         <>
@@ -84,47 +91,49 @@ console.log(questions)
                 {/* </div> */}
 
                 {/* QUESTIONS START */}
-                {questions.map(question => {
-                    return (
-                        <>
-                            <label className="option">
-                                <input type="radio" name="option" value="physicalTouchAnswer" />
-                                <span className="option1">
-                                    {question.physicalTouchAnswer}
-                                </span>
-                            </label>
-                            <label className="option">
-                                <input type="radio" name="option" value="qualityTimeAnswer" />
-                                <span className="option2">
-                                    {question.qualityTimeAnswer}
-                                </span>
-                            </label>
-                            <label className="option">
-                                <input type="radio" name="option" value="actsOfServiceAnswer" />
-                                <span className="option3">
-                                    {question.actsOfServiceAnswer}
-                                </span>
-                            </label>
-                            <label className="option">
-                                <input type="radio" name="option" value="wordsOfAffirmationAnswer" />
-                                <span className="option4">
-                                    {question.wordsOfAffirmationAnswer}
-                                </span>
-                            </label>
-                            <label className="option">
-                                <input type="radio" name="option" value="giftsAnswer" />
-                                <span className="option5">
-                                    {question.giftsAnswer}
-                                </span>
-                            </label> 
-                         </>
-                    )
+                {questions.map((question, index) => {
+                    if(index == selectedQuestion){
+                        return (
+                            <>
+                                <label className="option">
+                                    <input type="radio" name="option" value="physicalTouchAnswer" />
+                                    <span className="option1">
+                                        {question.physicalTouchAnswer}
+                                    </span>
+                                </label>
+                                <label className="option">
+                                    <input type="radio" name="option" value="qualityTimeAnswer" />
+                                    <span className="option2">
+                                        {question.qualityTimeAnswer}
+                                    </span>
+                                </label>
+                                <label className="option">
+                                    <input type="radio" name="option" value="actsOfServiceAnswer" />
+                                    <span className="option3">
+                                        {question.actsOfServiceAnswer}
+                                    </span>
+                                </label>
+                                <label className="option">
+                                    <input type="radio" name="option" value="wordsOfAffirmationAnswer" />
+                                    <span className="option4">
+                                        {question.wordsOfAffirmationAnswer}
+                                    </span>
+                                </label>
+                                <label className="option">
+                                    <input type="radio" name="option" value="giftsAnswer" />
+                                    <span className="option5">
+                                        {question.giftsAnswer}
+                                    </span>
+                                </label> 
+                             </>
+                        )
+                    }
                 })}
 
                 {/* Buttons */}
                 <div className="controls">
-                    <button className="previous">Previous</button>
-                    <button className="next">Next</button>
+                    <button className="previous" onClick={previousQuestion}>Previous</button>
+                    <button className="next" onClick={nextQuestion}>Next</button>
                 </div>
             </div>
 
