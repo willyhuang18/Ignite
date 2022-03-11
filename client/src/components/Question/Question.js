@@ -3,6 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import './Question.css'
 import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
+import Questionnaire from '../Questions/Questionnaire.js'
 // import Modal from '../Modal/Modal.js'
 
 const questions = [
@@ -46,7 +47,7 @@ const questions = [
 
 
 
-function Question(Modal) {
+function Question() {
   const [name, setName] = useState('Mark');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -105,7 +106,7 @@ function Question(Modal) {
                       <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                      <Modal.Body> <Questionnaire /></Modal.Body>
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                           Close
