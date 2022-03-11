@@ -65,8 +65,6 @@ const Dashboard = () => {
       {Auth.loggedIn() ? (
         <>
           <div className='d-flex flex-row justify-content-between'>
-          <Card />
-        
           <Question />
           </div>
         </>
