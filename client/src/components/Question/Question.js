@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { Modal, Button } from 'react-bootstrap';
 import './Question.css'
 import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
-import Modal from '../Modal/Modal.js'
+// import Modal from '../Modal/Modal.js'
 
 const questions = [
   {
@@ -54,7 +55,11 @@ function Question(Modal) {
   const [showContent, setShowContent] = useState(false)
 
   const handleClickStart = () => {
-    setShowContent({ showContent: !showContent })
+    setShowContent( true )
+  }
+
+  const handleClose = () => {
+    setShowContent( false )
   }
 
   const handleAnswerOptionClick = (isCorrect) => {
@@ -95,7 +100,21 @@ function Question(Modal) {
                 ) : (
                   <>
                     {/* <button className='button' onClick={handleClickStart}>Please answer some love language questions</button> */}
-                    <button className='button' onClick={Modal}>Please answer some love language questions</button>
+                    <button className='button' onClick={handleClickStart}>Please answer some love language questions</button>
+                    <Modal show={showContent} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                          Close
+                        </Button>
+                        <Button variant="primary" onClick={handleClose}>
+                          Save Changes
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
 
                   </>
                 )}
@@ -132,6 +151,7 @@ function Question(Modal) {
                     <div className='answer-section'>
                       {questions[currentQuestion].answerOptions.map((answerOption) => (
                         <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+
                       ))}
                     </div>
                   </>
