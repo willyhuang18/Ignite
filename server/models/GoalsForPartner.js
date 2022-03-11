@@ -1,8 +1,8 @@
 // importing mongoose
-const { Schema, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 // Schema for Partner Goals
-const partnerGoalsSchema = new Schema(
+const GoalsForPartnerSchema = new Schema(
     // properties
     {
         goalTitle:{
@@ -19,7 +19,7 @@ const partnerGoalsSchema = new Schema(
         loveFilter:{
             type: String,
             required: false,
-            maxlength: 50,
+            maxlength: 100,
         }
     },
     // Mongoose supports transforming Objects after querying MongoDb: toJSON 
@@ -40,6 +40,6 @@ const partnerGoalsSchema = new Schema(
 
 
 // Initialize our User model
-const partnerGoals = model('partnerGoals', partnerGoalsSchema);
+const GoalsForPartner = model('GoalsForPartner', GoalsForPartnerSchema);
 
-module.exports = partnerGoals;
+module.exports = GoalsForPartner;
