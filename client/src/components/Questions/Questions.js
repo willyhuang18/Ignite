@@ -1,5 +1,7 @@
 
-//  question1: 'It means the MOST to me if my partner...'
+//  question: 'It means the MOST to me if my partner...'
+// Which of the following scenarios would make you feel the best?
+// It's most meaningful when my partner ...
 
 // (for each) and display an index for question 1.
 // ex question 1's answers: loveTypeAnswers.physicalTouch[i]
