@@ -1,16 +1,8 @@
+import React from 'react';
+import Questionnaire from './Questionnaire';
 
-//  question: 'It means the MOST to me when my partner...'
-// Which of the following scenarios would make you feel the best?
-// It's most meaningful when my partner ...
 
-// (for each) and display an index for question 1.
-// ex question 1's answers: loveTypeAnswers.physicalTouch[i]
-// {loveTypeAnswers.qualityTime[i]}
-// {loveTypeAnswers.actsOfService[i]}
-// {loveTypeAnswers.wordsOfAffirmation[i]}
-// {loveTypeAnswers.gifts[i]}
-
-const loveTypeQuestions = [
+const questions = [
     {
         'physicalTouchAnswer': 'pulls me close and cuddles me while we watch a movie',
         'qualityTimeAnswer': 'and I spend a weekend alone in a cabin',
@@ -68,6 +60,14 @@ const loveTypeQuestions = [
         'giftsAnswer': 'bought me new shoes after I shared that I wanted to start running'
     }
 ]
+
+export default function Questions() {
+    return (
+    <div>
+        <Questionnaire questions={questions}/> 
+    </div>
+    )
+}
 
 // const loveTypeAnswers = [
 //     {
