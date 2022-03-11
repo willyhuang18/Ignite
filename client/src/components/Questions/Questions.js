@@ -1,5 +1,5 @@
 
-//  question: 'It means the MOST to me if my partner...'
+//  question: 'It means the MOST to me when my partner...'
 // Which of the following scenarios would make you feel the best?
 // It's most meaningful when my partner ...
 
