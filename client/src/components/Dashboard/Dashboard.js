@@ -6,8 +6,8 @@ import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
 import './Dashboard.css'
 
-
-const Dashboard = () => {
+export default function Dashboard() {
+  
   const [name, setName] = useState('Mark');
   const [showContent, setShowContent] = useState(false)
 
@@ -79,4 +79,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+
