@@ -50,7 +50,7 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit} style={{ height: '750px'}}>
+              <form onSubmit={handleFormSubmit} style={{ height: '750px',margin: '20px'}}>
               <h3 >Sign Up</h3>
               <label htmlFor="username">Your Name</label>
                 <input
