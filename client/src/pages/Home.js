@@ -4,10 +4,8 @@ import Dashboard from '../components/Dashboard';
 const Home = () => {
   return (
     <main >
-      <div className="flex-row ">
-        <div className="col-12 col-md-10 mb-3 p-3">
+      <div className="m-2 d-flex justify-content-center">
         <Dashboard />
-        </div>
       </div>
     </main>
   );

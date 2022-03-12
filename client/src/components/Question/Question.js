@@ -53,13 +53,13 @@ export default function Question() {
               <input className="file-upload" type="file" accept="image/*" />
             </div>
             <div className='lower-container'>
-              <div>
+              <div >
                 <h3>{name}</h3>
                 <br />
                 <button className='button'>{name} 's Love Language: <br /> </button>
 
                 {/* Questionnaire Modal */}
-                <button className='button' onClick={openModal}>Discover Your Love Language!</button>
+                <button className='button mt-2' onClick={openModal}>Discover Your Love Language!</button>
                 <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
                   <Modal.Header closeButton>
                     <Modal.Title>Discover Your Love Language</Modal.Title>
