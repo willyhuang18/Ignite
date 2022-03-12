@@ -8,14 +8,14 @@ const resolvers = {
       return QuestionOfTheDay.find();
     },
     users: async () => {
-      return User.find().populate('questionnaire');
+      return User.find(); //.populate('questionnaire');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('questionnaire');
+      return User.findOne({ username }); //.populate('questionnaire');
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('questionnaire');
+        return User.findOne({ _id: context.user._id }); //.populate('questionnaire');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
