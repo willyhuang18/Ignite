@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import $ from 'jquery'
+import $ from 'jquery'
 import './Questionnaire.css'
 
 
@@ -69,10 +69,23 @@ export default function Questionnaire() {
         }
     ]
 
+    // $('.submit').style.display = 'none';
+
     function nextQuestion() {
         setSelectedQuestion(selectedQuestion + 1);
+        // if the user is on the last question display the 'submit' button
+        if (selectedQuestion === questions.length - 1) {
+            $('.submit').style.display = 'block';
+        }
     }
-    console.log(questions)
+
+    // When the submit button is clicked, display the result
+    // function submitQuestionnaire() {
+
+    // }
+
+    // When the user clicks on an answer, the associated love language sum will increase by 1
+
     return (
         <>
             <div className="questionnaire">
@@ -90,31 +103,31 @@ export default function Questionnaire() {
                             <>
                                 <div class="allAnswers">
                                     <button type="radio" className="my-3 option" value="physicalTouchAnswer">
-                                        <p className="option1">
+                                        <p className="option1" onClick={nextQuestion}>
                                             {question.physicalTouchAnswer}
                                         </p>
                                     </button>
 
                                     <button type="radio" className="my-3 option" value="qualityTimeAnswer">
-                                        <p className="option2">
+                                        <p className="option2" onClick={nextQuestion}>
                                             {question.qualityTimeAnswer}
                                         </p>
                                     </button>
 
                                     <button type="radio" name="my-3 option" value="actsOfServiceAnswer">
-                                        <p className="option3">
+                                        <p className="option3" onClick={nextQuestion}>
                                             {question.actsOfServiceAnswer}
                                         </p>
                                     </button>
 
                                     <button type="radio" name="my-3 option" value="wordsOfAffirmationAnswer">
-                                        <p className="option4">
+                                        <p className="option4" onClick={nextQuestion}>
                                             {question.wordsOfAffirmationAnswer}
                                         </p>
                                     </button>
 
                                     <button type="radio" name="my-3 option" value="giftsAnswer">
-                                        <p className="option5">
+                                        <p className="option5" onClick={nextQuestion}>
                                             {question.giftsAnswer}
                                         </p>
                                     </button>
@@ -127,7 +140,8 @@ export default function Questionnaire() {
 
                 {/* Buttons */}
                 <div className="controls mt-5">
-                    <button className="next" onClick={nextQuestion}>Next</button>
+                    <button className="submit">Submit</button>
+                    {/* onClick={submitQuestionnaire} */}
                 </div>
             </div>
 
