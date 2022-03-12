@@ -50,9 +50,18 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit} style={{ height: '600px'}}>
+              <form onSubmit={handleFormSubmit} style={{ height: '750px',margin: '20px'}}>
               <h3 >Sign Up</h3>
-              <label htmlFor="username">UserName</label>
+              <label htmlFor="username">Your Name</label>
+                <input
+                  className="form-input"
+                  placeholder="Your username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <label htmlFor="username">Your Partner's Name</label>
                 <input
                   className="form-input"
                   placeholder="Your username"
