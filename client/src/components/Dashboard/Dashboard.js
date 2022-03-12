@@ -59,7 +59,6 @@ const Dashboard= () => {
       {Auth.loggedIn() ? (
         <>
           <div className='d-flex flex-row justify-content-between'>
-
             <div className='question'>
               <div className='upper-container '>
                 <h1>Ignite
