@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import './Question.css'
 import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
-import Questionnaire from '../Questions/Questionnaire.js'
+import Questionnaire from '../Questionnaire/Questionnaire.js'
 
 export default function Question() {
   const [name, setName] = useState('Mark');
@@ -60,7 +60,7 @@ export default function Question() {
 
                 {/* Questionnaire Modal */}
                 <button className='button' onClick={openModal}>Discover Your Love Language!</button>
-                <Modal show={showContent} onHide={closeModal}>
+                <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
                   <Modal.Header closeButton>
                     <Modal.Title>Discover Your Love Language</Modal.Title>
                   </Modal.Header>
@@ -69,7 +69,7 @@ export default function Question() {
                     <Questionnaire />
                   </Modal.Body>
                 </Modal>
-                
+
               </div>
             </div>
 
