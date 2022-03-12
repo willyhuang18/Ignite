@@ -48,9 +48,9 @@ export default function Question() {
         <div className='row '>
           <div className="col-4 mx-5">
             <div className="image-container">
-              <img className="profilePic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
-              <span className='uploadButton'><FaCamera /></span>
-              <input className="fileUpload" type="file" accept="image/*" />
+              <img className="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
+              <span className='upload-button'><FaCamera /></span>
+              <input className="file-upload" type="file" accept="image/*" />
             </div>
             <div className='lower-container'>
               <div>

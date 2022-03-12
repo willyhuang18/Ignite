@@ -179,3 +179,22 @@ img{
   .answer-section button svg {
     margin-right: 5px;
   }
+  .profile-pic {
+    width: 200px;
+    max-height: 200px;
+    display: inline-block;
+}
+
+.file-upload {
+    display: none;
+}
+
+.upload-button {
+  font-size: 1.2em;
+  position:relative; top: 90px; left: 65px;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
