@@ -13,7 +13,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import './pages/home.css';
 import $ from 'jquery'
 
