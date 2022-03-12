@@ -3,78 +3,40 @@ import { Modal, Button } from 'react-bootstrap';
 import './Question.css'
 import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
-import Questionnaire from '../Questions/Questionnaire.js'
-// import Modal from '../Modal/Modal.js'
+import Questionnaire from '../Questionnaire/Questionnaire.js'
 
-const questions = [
-  {
-    questionText: 'What is the capital of France?',
-    answerOptions: [
-      { answerText: 'New York', isCorrect: false },
-      { answerText: 'London', isCorrect: false },
-      { answerText: 'Paris', isCorrect: true },
-      { answerText: 'Dublin', isCorrect: false },
-    ],
-  },
-  {
-    questionText: 'Who is CEO of Tesla?',
-    answerOptions: [
-      { answerText: 'Jeff Bezos', isCorrect: false },
-      { answerText: 'Elon Musk', isCorrect: true },
-      { answerText: 'Bill Gates', isCorrect: false },
-      { answerText: 'Tony Stark', isCorrect: false },
-    ],
-  },
-  {
-    questionText: 'The iPhone was created by which company?',
-    answerOptions: [
-      { answerText: 'Apple', isCorrect: true },
-      { answerText: 'Intel', isCorrect: false },
-      { answerText: 'Amazon', isCorrect: false },
-      { answerText: 'Microsoft', isCorrect: false },
-    ],
-  },
-  {
-    questionText: 'How many Harry Potter books are there?',
-    answerOptions: [
-      { answerText: '1', isCorrect: false },
-      { answerText: '4', isCorrect: false },
-      { answerText: '6', isCorrect: false },
-      { answerText: '7', isCorrect: true },
-    ],
-  },
-];
-
-
-
-function Question() {
+export default function Question() {
   const [name, setName] = useState('Mark');
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
-  const [start, setStart] = useState(false);
   const [showContent, setShowContent] = useState(false)
 
-  const handleClickStart = () => {
-    setShowContent( true )
+  // this will open the modal upon click
+  const openModal = () => {
+    setShowContent(true)
   }
 
-  const handleClose = () => {
-    setShowContent( false )
+  // this will close the modal upon click
+  const closeModal = () => {
+    setShowContent(false)
   }
 
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
-    }
+  // const [currentQuestion, setCurrentQuestion] = useState(0);
+  // const [showScore, setShowScore] = useState(false);
+  // const [score, setScore] = useState(0);
+  // const [start, setStart] = useState(false);
 
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
-  };
+
+  // const handleAnswerOptionClick = (isCorrect) => {
+  //   if (isCorrect) {
+  //     setScore(score + 1);
+  //   }
+
+  // const nextQuestion = currentQuestion + 1;
+  // if (nextQuestion < questions.length) {
+  //   setCurrentQuestion(nextQuestion);
+  // } else {
+  //   setShowScore(true);
+  // }
+
 
   return (
     <div className='question'>
@@ -93,34 +55,22 @@ function Question() {
             <div className='lower-container'>
               <div>
                 <h3>{name}</h3>
-                <button className='button'>{name} 's Love Language: {score}<br /> {questions[0].questionText}</button>
-                {start ? (
-                  <div>
-                    <button className='button'>{score} 's Love Language:<br /> {questions.length}</button>
-                  </div>
-                ) : (
-                  <>
-                    {/* <button className='button' onClick={handleClickStart}>Please answer some love language questions</button> */}
-                    <button className='button' onClick={handleClickStart}>Please answer some love language questions</button>
-                    <Modal show={showContent} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body> <Questionnaire /></Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                          Save Changes
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
+                <br />
+                <button className='button'>{name} 's Love Language: <br /> </button>
 
-                  </>
-                )}
+                {/* Questionnaire Modal */}
+                <button className='button' onClick={openModal}>Discover Your Love Language!</button>
+                <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
+                  <Modal.Header closeButton>
+                    <Modal.Title>Discover Your Love Language</Modal.Title>
+                  </Modal.Header>
+
+                  <Modal.Body>
+                    <Questionnaire />
+                  </Modal.Body>
+                </Modal>
+
               </div>
-
             </div>
 
           </div>
@@ -128,45 +78,38 @@ function Question() {
             <div className='px-5' >
               <img src={heart} alt='heart' />
             </div>
-            <div className='context'>
-              {showContent && <div className='app'>
-                {showScore ? (
-                  <div className='score-section vstack'>
-                    <div>
-                      How to make {name} Feel More Loved
-                    </div>
-                    <div className='answer-section'>
-                      {questions[2].answerOptions.map((answerOption) => (
-                        <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div className='question-section'>
-                      <div className='question-count'>
-                        <span>Question {currentQuestion + 1}</span>/{questions.length}
+
+            {/* <div className='context'>
+                {showContent && <div className='app'>
+                  {showScore ? (
+                    <div className='score-section vstack'>
+                      <div>
+                        How to make {name} Feel More Loved
                       </div>
-                      <div className='question-text'>{questions[currentQuestion].questionText}</div>
-                    </div>
-                    <div className='answer-section'>
-                      {questions[currentQuestion].answerOptions.map((answerOption) => (
-                        <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                      <div className='answer-section'>
+                        {questions[2].answerOptions.map((answerOption) => (
+                          <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                        ))}
+                      </div>
+                    </div> */}
 
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-              }
-            </div>
+            {/* <div className='question-section'>
+                        <div className='question-count'>
+                          <span>Question {currentQuestion + 1}</span>/{questions.length}
+                        </div>
+                        <div className='question-text'>{questions[currentQuestion].questionText}</div>
+                      </div>
+                      <div className='answer-section'>
+                        {questions[currentQuestion].answerOptions.map((answerOption) => (
+                          <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+
+                        ))}
+                      </div> */}
           </div>
+
         </div>
-
-
       </div>
     </div>
   )
-}
+};
 
-export default Question

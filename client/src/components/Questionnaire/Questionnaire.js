@@ -4,7 +4,7 @@ import './Questionnaire.css'
 
 
 export default function Questionnaire() {
-    const [ selectedQuestion, setSelectedQuestion ] = useState(0);
+    const [selectedQuestion, setSelectedQuestion] = useState(0);
     // create a variable for each love type
     // display & iterate through each question
     // if the user selects option1, sum 1 to PT variable, etc.
@@ -68,7 +68,7 @@ export default function Questionnaire() {
             'giftsAnswer': 'bought me new shoes after I shared that I wanted to start running'
         }
     ]
-    
+
     function previousQuestion() {
         setSelectedQuestion(selectedQuestion - 1);
     }
@@ -76,62 +76,61 @@ export default function Questionnaire() {
     function nextQuestion() {
         setSelectedQuestion(selectedQuestion + 1);
     }
-console.log(questions)
+    console.log(questions)
     return (
         <>
-            {/* {props}.forEach(function displayQuestion() { */}
             <div className="questionnaire">
-                <div className="title">
-                    Discover Your Love Type
+                <div className="questionTitle text-center">
+                    <strong>
+                        It's MOST meaningful when my partner...
+                    </strong>
                 </div>
+                <br />
 
-                {/* <div id="question" className="question">
-                    It means the MOST to me when my partner... */}
-                    {/* Its most meaningful when my partner ... */}
-                {/* </div> */}
-
-                {/* QUESTIONS START */}
+                {/* QUESTIONNAIRE BEGINS */}
                 {questions.map((question, index) => {
-                    if(index == selectedQuestion){
+                    if (index === selectedQuestion) {
                         return (
                             <>
-                                <label className="option">
-                                    <input type="radio" name="option" value="physicalTouchAnswer" />
-                                    <span className="option1">
-                                        {question.physicalTouchAnswer}
-                                    </span>
-                                </label>
-                                <label className="option">
-                                    <input type="radio" name="option" value="qualityTimeAnswer" />
-                                    <span className="option2">
-                                        {question.qualityTimeAnswer}
-                                    </span>
-                                </label>
-                                <label className="option">
-                                    <input type="radio" name="option" value="actsOfServiceAnswer" />
-                                    <span className="option3">
-                                        {question.actsOfServiceAnswer}
-                                    </span>
-                                </label>
-                                <label className="option">
-                                    <input type="radio" name="option" value="wordsOfAffirmationAnswer" />
-                                    <span className="option4">
-                                        {question.wordsOfAffirmationAnswer}
-                                    </span>
-                                </label>
-                                <label className="option">
-                                    <input type="radio" name="option" value="giftsAnswer" />
-                                    <span className="option5">
-                                        {question.giftsAnswer}
-                                    </span>
-                                </label> 
-                             </>
+                                <div class="allAnswers">
+                                    <button type="radio" className="my-3 option" value="physicalTouchAnswer">
+                                        <p className="option1">
+                                            {question.physicalTouchAnswer}
+                                        </p>
+                                    </button>
+
+                                    <button type="radio" className="my-3 option" value="qualityTimeAnswer">
+                                        <p className="option2">
+                                            {question.qualityTimeAnswer}
+                                        </p>
+                                    </button>
+
+                                    <button type="radio" name="my-3 option" value="actsOfServiceAnswer">
+                                        <p className="option3">
+                                            {question.actsOfServiceAnswer}
+                                        </p>
+                                    </button>
+
+                                    <button type="radio" name="my-3 option" value="wordsOfAffirmationAnswer">
+                                        <p className="option4">
+                                            {question.wordsOfAffirmationAnswer}
+                                        </p>
+                                    </button>
+
+                                    <button type="radio" name="my-3 option" value="giftsAnswer">
+                                        <p className="option5">
+                                            {question.giftsAnswer}
+                                        </p>
+                                    </button>
+                                </div>
+                                <br />
+                            </>
                         )
                     }
                 })}
 
                 {/* Buttons */}
-                <div className="controls">
+                <div className="controls mt-5">
                     <button className="previous" onClick={previousQuestion}>Previous</button>
                     <button className="next" onClick={nextQuestion}>Next</button>
                 </div>
