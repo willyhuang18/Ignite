@@ -76,6 +76,11 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+              {error && (
+                <div className="my-1 p-1 bg-danger text-white">
+                  {error.message}
+                </div>
+                )}
                 <button className='mt-2'
                   style={{ cursor: 'pointer' }}
                   type="submit"
@@ -87,12 +92,6 @@ const Login = (props) => {
                   <div className="fb"><FaFacebook /> Facebook</div>
                 </div>
               </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
             )}
     </main>
   );
