@@ -1,3 +1,14 @@
 import React from "react";
 
-export default Header;
+const Goals = () => {
+  return (
+  <div>
+    
+  </div>
+  );
+};
+
+const style = {
+  position: "relative",
+};
+export default Goals;
