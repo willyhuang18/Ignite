@@ -69,10 +69,6 @@ export default function Questionnaire() {
         }
     ]
 
-    function previousQuestion() {
-        setSelectedQuestion(selectedQuestion - 1);
-    }
-
     function nextQuestion() {
         setSelectedQuestion(selectedQuestion + 1);
     }
@@ -131,7 +127,6 @@ export default function Questionnaire() {
 
                 {/* Buttons */}
                 <div className="controls mt-5">
-                    <button className="previous" onClick={previousQuestion}>Previous</button>
                     <button className="next" onClick={nextQuestion}>Next</button>
                 </div>
             </div>

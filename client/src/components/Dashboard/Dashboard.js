@@ -6,7 +6,40 @@ import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
 import './Dashboard.css'
 import Goals from '../Goals/Goals';
+import $ from 'jquery'
 
+$(document).ready(function() {
+
+    
+  var readURL = function(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              $('.profile-pic').attr('src', e.target.result);
+          }
+          reader.addEventListener('load', ()=>{
+            localStorage.setItem('recent-image',reader.result)
+          })
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+  
+  $(".file-upload").on('change', function(){
+      readURL(this); 
+  });
+  
+  $(".upload-button").on('click', function() {
+     $(".file-upload").click();
+  });
+  
+  $(window).on("load",() =>{
+    const recentImageDataUrl = localStorage.getItem('recent-image')
+    
+    if(recentImageDataUrl){
+      $('.profile-pic').attr('src',recentImageDataUrl);
+    }
+  })
+});
 const Dashboard= () => {
   
   const [name, setName] = useState('Mark');
@@ -42,8 +75,9 @@ const Dashboard= () => {
                       <input className="file-upload" type="file" accept="image/*" />
                     </div>
                     <div className='lower-container'>
-                      <div >
-                        <h3>{name}</h3>
+                        <div >
+                          <h3>{name}</h3>
+                        </div>
                         <br />
                         <button className='button'>{name} 's Love Language: <br /> </button>
 
@@ -59,7 +93,7 @@ const Dashboard= () => {
                           </Modal.Body>
                         </Modal>
 
-                      </div>
+                      
                     </div>
                   </div>
                   <div className='col-6'>
