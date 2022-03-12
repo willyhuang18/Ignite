@@ -74,8 +74,9 @@ const Dashboard= () => {
                       <input className="file-upload" type="file" accept="image/*" />
                     </div>
                     <div className='lower-container'>
-                      <div >
-                        <h3>{name}</h3>
+                        <div >
+                          <h3>{name}</h3>
+                        </div>
                         <br />
                         <button className='button'>{name} 's Love Language: <br /> </button>
 
@@ -91,7 +92,7 @@ const Dashboard= () => {
                           </Modal.Body>
                         </Modal>
 
-                      </div>
+                      
                     </div>
                   </div>
                   <div className='col-6'>
