@@ -12,21 +12,21 @@ const Header = () => {
   return (
     <div className="flex-column ">
           {Auth.loggedIn() ? (
-            <nav className="navbar sticky-top">
-                <div className="container header">
-                    <div className="flame">
-                      <h1><span className='span'><img src={logo} alt="fire-heart" className='fire'/>Ignite</span></h1>
-                    </div>
-                    <div className="d-flex">
-                    <a href="/" type="button" className=" m-1 text-light" aria-current="page"><span> Homepage</span>
-                        <div className="liquid"></div>
-                    </a>
-                    <a href="#" id="logout" className="m-1 text-light" type="submit" onClick={logout}><span> Log out</span>
-                        <div className="liquid"></div>
-                    </a>
-                    </div>
-                </div>
-            </nav>
+              <nav className="navbar sticky-top">
+                  <div className="container-fluid header">
+                      <div className="flame">
+                        <h1><span className='span'><img src={logo} alt="fire-heart" className='fire'/>Ignite</span></h1>
+                      </div>
+                      <div className="d-flex">
+                      <a href="/" type="button" className=" m-1 text-light" aria-current="page"><span> Homepage</span>
+                          <div className="liquid"></div>
+                      </a>
+                      <a href="#" id="logout" className="m-1 text-light" type="submit" onClick={logout}><span> Log out</span>
+                          <div className="liquid"></div>
+                      </a>
+                      </div>
+                  </div>
+              </nav>
           ) : (
                 <div className="main header" id="main">
                     <div className="jumbotron start text-center">
