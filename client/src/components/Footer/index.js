@@ -27,7 +27,7 @@ const Footer = () => {
           <FaFacebookSquare className='m-2 fs-3' />
           <FaGithub className='m-2 fs-3' />
           <FaTwitter className='m-2 fs-3'/>
-          <p>© Copyright 2018 TinDog</p>
+          <p>© Copyright 2022 Ignite</p>
         </div>
       </div>
     </footer>
