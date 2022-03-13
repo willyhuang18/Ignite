@@ -71,11 +71,21 @@ export default function Questionnaire() {
     let wordsOfAffirmation = 0;
     let gifts = 0;
 
-        // create a variable for each love type
+    // create a variable for each love type
     // When the user clicks on an answer, the associated love language sum will increase by 1
     // At the end, the category with the most points will be chosen as the users love type
     // If there is a tie, use math.random
 
+    // this is adding to physical touch but not moving on to the next question. if i keep clicking it, it'll keep adding. only when i click another will it change questions bc it's running the next question function
+
+    function addToPhysicalTouch() {
+            physicalTouch += 1  
+            setSelectedQuestion(selectedQuestion + 1)
+            console.log('physical touch equals');
+  
+    }
+    console.log(physicalTouch)
+    
 
     function nextQuestion(index) {
 
@@ -129,32 +139,32 @@ export default function Questionnaire() {
         // $('.option5').on('click',gifts++)
         // -------------------------------------------------------------------------------------------------------------------------- 
 
-        console.log('physical touch equals');
-        console.log(physicalTouch)
+        // console.log('physical touch equals');
+        // console.log(physicalTouch)
 
-        console.log('quality time equals');
-        console.log(qualityTime)
+        // console.log('quality time equals');
+        // console.log(qualityTime)
 
-        console.log('acts of service equals');
-        console.log(actsOfService)
+        // console.log('acts of service equals');
+        // console.log(actsOfService)
 
-        console.log('words equals');
-        console.log(wordsOfAffirmation)
+        // console.log('words equals');
+        // console.log(wordsOfAffirmation)
 
-        console.log('gifts equals');
-        console.log(gifts)
+        // console.log('gifts equals');
+        // console.log(gifts)
 
         // setSelectedQuestion(selectedQuestion + 1);
         // if the user is on the last question display the 'submit' button
-    //     if (index === [7]) {
-    //         $('.submit').style.display = 'block';
-    //     }
-    // }
+        //     if (index === [7]) {
+        //         $('.submit').style.display = 'block';
+        //     }
+        // }
 
-    // When the submit button is clicked, display the result
-    // function submitQuestionnaire() {
+        // When the submit button is clicked, display the result
+        // function submitQuestionnaire() {
 
-    // }
+    }
 
     return (
         <>
@@ -172,7 +182,8 @@ export default function Questionnaire() {
                         return (
                             <>
                                 <div class="allAnswers">
-                                    <button onClick={nextQuestion} type="radio" className="my-3 option1" value="physicalTouchAnswer">
+                                    {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
+                                    <button onClick={addToPhysicalTouch} type="radio" className="my-3 option1" value="physicalTouchAnswer">
                                         <p>
                                             {question.physicalTouchAnswer}
                                         </p>
@@ -205,8 +216,11 @@ export default function Questionnaire() {
                                 <br />
                             </>
                         )
+
                     }
-                })}
+                }
+                )
+                }
 
                 {/* Buttons */}
                 <div className="controls mt-5">
