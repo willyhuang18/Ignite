@@ -10,8 +10,8 @@ const resolvers = {
     users: async () => {
       return User.find(); //.populate('questionnaire');
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }); //.populate('questionnaire');
+    user: async (parent, { username, username2 }) => {
+      return User.findOne({ username, username2}); //.populate('questionnaire');
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -25,8 +25,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { username, username2, email, password }) => {
+      const user = await User.create({ username, username2, email, password });
       const token = signToken(user);
       return { token, user };
     },
