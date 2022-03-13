@@ -5,6 +5,7 @@ import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
 import './Dashboard.css'
+import Goals from '../Goals/Goals';
 import $ from 'jquery'
 
 $(document).ready(function() {
@@ -108,8 +109,13 @@ const Dashboard= () => {
                         </Modal>
                     </div>
                   </div>
-                  <div className='col-6 d-flex justify-content-center mx-3'>
+                  <div className='col-6'>
+                    <div className='row px-5' >
                       <img src={heart} alt='heart' />
+                    </div>
+                    <div className="row">
+                      <Goals/>
+                    </div>
                   </div>
                 </div>
               </div>
