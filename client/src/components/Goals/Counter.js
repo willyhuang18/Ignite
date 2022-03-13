@@ -18,7 +18,8 @@ const Counter=()=>{
             <h1>{count}</h1>
             </div>
             <div className="row">
-
+            <Button title={"-"} action={decrementCount} />
+            <Button title={"+"} action={incrementCount} />
             </div>
              
         </>
