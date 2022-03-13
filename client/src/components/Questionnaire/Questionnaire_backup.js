@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import $ from 'jquery'
 import './Questionnaire.css'
 
-let physicalTouch = 0;
-let qualityTime = 0;
-let actsOfService = 0;
-let wordsOfAffirmation = 0;
-let gifts = 0;
 
 export default function Questionnaire() {
     const [selectedQuestion, setSelectedQuestion] = useState(0);
@@ -70,25 +65,112 @@ export default function Questionnaire() {
         }
     ]
 
-    // this function will add 1 to the 5 categories (love languages) each time the answer corresponding with that love language is clicked.   
-    function nextQuestion(index) {
-        console.log("index is " + index)
+    let physicalTouch = 0;
+    let qualityTime = 0;
+    let actsOfService = 0;
+    let wordsOfAffirmation = 0;
+    let gifts = 0;
 
-        if (index === 1) {
-            physicalTouch += 1
-        }
-        else if (index === 2) {
-            qualityTime += 1
-        }
-        else if (index === 3) {
-            actsOfService += 1
-        }
-        else if (index === 4) {
-            wordsOfAffirmation += 1
-        }
-        else {
-            gifts += 1
-        }
+    // create a variable for each love type
+    // When the user clicks on an answer, the associated love language sum will increase by 1
+    // At the end, the category with the most points will be chosen as the users love type
+    // If there is a tie, use math.random
+
+    // this is adding to physical touch but not moving on to the next question. if i keep clicking it, it'll keep adding. only when i click another will it change questions bc it's running the next question function
+
+    // this is not working at all..... just showing 0
+    // function addToPhysicalTouch() {
+    //         physicalTouch++  
+    //         setSelectedQuestion(selectedQuestion + 1)
+    //         console.log('physical touch equals');
+
+    // }
+    // console.log(physicalTouch)
+
+
+    function nextQuestion(index) {
+
+        // the for each method is making physicaltouch = 8
+        questions.forEach((index) => {
+            if ($('.option1')) {
+                physicalTouch ++
+            }
+            // if (questions[index] === 'physicalTouchAnswer') {
+            //     physicalTouch ++
+            // }
+            $('.option1').on('click', function () {
+                console.log("physicalTouch before" + physicalTouch)
+                physicalTouch += 
+                console.log("physicalTouch after" + physicalTouch)
+            });
+            $('.option1').on('click', function () {
+                qualityTime += 1
+            });
+            $('.option1').on('click', function () {
+                actsOfService += 1
+            });
+            $('.option1').on('click', function () {
+                wordsOfAffirmation += 1
+            });
+            $('.option1').on('click', function () {
+                gifts += 1
+            });
+        })
+
+        // when the user clicks an answer, 1 point will be added to the corresponding love language
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // THIS WAY, ONLY PHYSICAL TOUCH INCREMENTS TO 1 AND STAYS AT ONE
+
+        // With the for loop. physical touch equals 8 and stays that way...
+
+        // for (index = 0; index < questions.length; index++) {
+        //     if ($('.option1').on('click')) {
+        //         physicalTouch += 1
+        //     }
+        //     else if ($('.option2').on('click')) {
+        //         qualityTime += 1
+        //     }
+        //     else if ($('.option3').on('click')) {
+        //         actsOfService += 1
+        //     }
+        //     else if ($('.option4').on('click')) {
+        //         wordsOfAffirmation += 1
+        //     }
+        //     else {
+        //         gifts += 1
+        //     }
+        // }
+        // -------------------------------------------------------------------------------------------------------------------------- 
+
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // THIS WAY EVERYTHING SHOWS UP AS 0  
+        // $('.option1').on('click', function(){
+        //     physicalTouch += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     qualityTime += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     actsOfService += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     wordsOfAffirmation += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     gifts += 1
+        // });
+        // -------------------------------------------------------------------------------------------------------------------------- 
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // This way, everything changes to 1 (even though it's not the proper syntax.)
+        // $('.option1').on('click', physicalTouch++)
+        // $('.option2').on('click',qualityTime++)
+        // $('.option3').on('click',actsOfService++)
+        // $('.option4').on('click',wordsOfAffirmation++)
+        // $('.option5').on('click',gifts++)
+        // -------------------------------------------------------------------------------------------------------------------------- 
 
         console.log('physical touch equals');
         console.log(physicalTouch)
@@ -105,8 +187,16 @@ export default function Questionnaire() {
         console.log('gifts equals');
         console.log(gifts)
 
-        // this will display the next question in the questions array
         setSelectedQuestion(selectedQuestion + 1);
+        // if the user is on the last question display the 'submit' button
+        //     if (index === [7]) {
+        //         $('.submit').style.display = 'block';
+        //     }
+        // }
+
+        // When the submit button is clicked, display the result
+        // function submitQuestionnaire() {
+
     }
 
     return (
@@ -126,31 +216,31 @@ export default function Questionnaire() {
                             <>
                                 <div class="allAnswers">
                                     {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
-                                    <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
+                                    <button onClick={nextQuestion} type="radio" className="my-3 option1" value="physicalTouchAnswer">
                                         <p>
                                             {question.physicalTouchAnswer}
                                         </p>
                                     </button>
 
-                                    <button onClick={() => nextQuestion(2)} type="radio" className="my-3 option2">
+                                    <button onClick={nextQuestion} type="radio" className="my-3 option2" value="qualityTimeAnswer">
                                         <p>
                                             {question.qualityTimeAnswer}
                                         </p>
                                     </button>
 
-                                    <button onClick={() => nextQuestion(3)} type="radio" name="my-3 option3">
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option3" value="actsOfServiceAnswer">
                                         <p>
                                             {question.actsOfServiceAnswer}
                                         </p>
                                     </button>
 
-                                    <button onClick={() => nextQuestion(4)} type="radio" name="my-3 option4">
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option4" value="wordsOfAffirmationAnswer">
                                         <p>
                                             {question.wordsOfAffirmationAnswer}
                                         </p>
                                     </button>
 
-                                    <button onClick={() => nextQuestion(5)} type="radio" name="my-3 option5">
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option5" value="giftsAnswer">
                                         <p>
                                             {question.giftsAnswer}
                                         </p>
