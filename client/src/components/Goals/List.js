@@ -16,12 +16,17 @@ const List = ()=>{
         <>
         {GFP.map((val)=> (
             <li key={val._id}>
-            <Card>
-                <Card.Body>
+            <Card style={cardSt}>
+                <Card.Body className="row">
+                    <div className="col-6">
                     <Card.Title>{val.goalTitle}</Card.Title>
                         <Card.Text>
                             {val.loveFilter}
                         </Card.Text>
+                     </div>   
+                    <div className="col-4">
+                        <p> 3</p>
+                    </div> 
              </Card.Body>
             </Card> 
              </li>
@@ -30,6 +35,12 @@ const List = ()=>{
     );
 };
 
+const cardSt = {
+    "width": "400px",
+    "margin": " 5px",
+    "backgroundColor": "grey",
+    "color": "white"
+}
 
 
 export default List;

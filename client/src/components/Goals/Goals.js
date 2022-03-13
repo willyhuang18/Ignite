@@ -5,7 +5,7 @@ const Goals = () => {
   return (
   <div>
     <h1 style={title}> Goals list </h1>
-   <div style={style}>
+   <div style={style} className="">
     <List />
   </div>
   </div>
@@ -14,11 +14,11 @@ const Goals = () => {
 
 const style = {
   "backgroundImage": "linear-gradient(to right bottom, #bf1d8f, #a74fba, #8370d8, #538ae8, #129feb)",
-  "width": "auto",
+  "width": "500px",
   "height": "280px",
   "overflow": "scroll",
   "borderStyle":"solid",
-  "borderWidth": "3px"
+  "borderWidth": "4px",
 };
 
 const title = {
