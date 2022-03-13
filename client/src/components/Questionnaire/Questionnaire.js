@@ -70,7 +70,7 @@ export default function Questionnaire() {
         }
     ]
 
-    // this function will add 1 to the 5 categories (love languages) each time the answer corresponding with that love language is clicked.   
+    // this function will add 1 to designated love language each time the answer corresponding with that love language is clicked.   
     function nextQuestion(index) {
         console.log("index is " + index)
 
@@ -176,5 +176,4 @@ export default function Questionnaire() {
 
         </>
     )
-    // )};
 }
