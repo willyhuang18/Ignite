@@ -9,6 +9,7 @@ import Auth from '../utils/auth';
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
+    username2: '',
     email: '',
     password: '',
   });
@@ -16,10 +17,12 @@ const Signup = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    const { name2, value2 } = event.target;
 
     setFormState({
       ...formState,
       [name]: value,
+      [name2]: value2,
     });
   };
 
@@ -65,9 +68,9 @@ const Signup = () => {
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="username"
+                  name="username2"
                   type="text"
-                  value={formState.name}
+                  value={formState.name2}
                   onChange={handleChange}
                 />
                 <label htmlFor="username">Email</label>
@@ -89,11 +92,16 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                {error && (
+                  <div className="my-1 p-1 bg-danger text-white">
+                    {error.message}
+                  </div>
+                )}
                 <button
                   style={{ cursor: 'pointer', marginTop: '20px' }}
                   type="submit"
                 >
-                  Log In
+                  Sign Up
                 </button>
                 <div className="social">
                   <div className="go"><FaGoogle className='mt-2 rounded' /> Google</div>
@@ -102,11 +110,7 @@ const Signup = () => {
               </form>
             )}
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+            
     </main>
   );
 };

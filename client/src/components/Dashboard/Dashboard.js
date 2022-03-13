@@ -41,8 +41,6 @@ $(document).ready(function() {
   })
 });
 const Dashboard= () => {
-  
-  const [name, setName] = useState('Mark');
   const [showContent, setShowContent] = useState(false)
 
   // this will open the modal upon click
@@ -75,10 +73,10 @@ const Dashboard= () => {
                     </div>
                     <div className='lower-container'>
                       
-                          <h3 className='h3'>{name}</h3>
+                          <h3 className='h3'>{Auth.getName().data.username}</h3>
 
                         <br />
-                        <button className='button'>{name} 's Love Language: <br /> </button>
+                        <button className='button'>{Auth.getName().data.username} 's Love Language: <br /> </button>
 
                         {/* Questionnaire Modal */}
                         <button className='button mt-2' onClick={openModal}>Discover Your Love Language!</button>
@@ -91,10 +89,10 @@ const Dashboard= () => {
                             <Questionnaire />
                           </Modal.Body>
                         </Modal>
-                        <h3 className='h3'>{name}</h3>
+                        <h3 className='h3'>{Auth.getName().data.username2}</h3>
 
                         <br />
-                        <button className='button'>{name} 's Love Language: <br /> </button>
+                        <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
 
                         {/* Questionnaire Modal */}
                         <button className='button mt-2' onClick={openModal}>Discover Your Love Language!</button>
