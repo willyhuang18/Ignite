@@ -5,9 +5,11 @@ export default function Button(props) {
   };
 
   const style = {
-    "width": "5px",
-    "height": "5px",
+    "width": "2rem",
+    "height": "2rem",
     "borderRadius": "50%",
-    "background": "orange"
+    "border": "none",
+    "margin": "10px 0 0 0",
+    "fontSize": "1em",
 
   }

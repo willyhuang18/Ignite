@@ -21,12 +21,12 @@ const List = ()=>{
                 <Card.Body className="row">
                     <div className="col-6">
                     <Card.Title>{val.goalTitle}</Card.Title>
-                        <Card.Text>
+                        <Card.Text style={filter}>
                             {val.loveFilter}
                         </Card.Text>
                      </div>   
                     <div className="col-4">
-                        <p> 3</p>
+                        <Counter />
                     </div> 
              </Card.Body>
             </Card> 
@@ -41,6 +41,10 @@ const cardSt = {
     "margin": " 5px",
     "backgroundColor": "grey",
     "color": "white"
+}
+
+const filter = {
+    "fontSize": "13px"
 }
 
 

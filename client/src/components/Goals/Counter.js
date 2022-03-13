@@ -15,12 +15,14 @@ const Counter=()=>{
     return(
         <>
             <div className="row">
-            <h1>{count}</h1>
+            <Button className="col-3" title={"-"} action={decrementCount} />    
+            <h1 className="col-6">{count}</h1>
+            <Button className="col-3" title={"+"} action={incrementCount} />
             </div>
-            <div className="row">
+            {/* <div className="row">
             <Button title={"-"} action={decrementCount} />
             <Button title={"+"} action={incrementCount} />
-            </div>
+            </div> */}
              
         </>
     );
