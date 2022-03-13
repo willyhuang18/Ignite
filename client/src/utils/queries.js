@@ -22,7 +22,7 @@ export const QUERY_questionOfTheDay = gql`
   }
  `;
 
- export const QUERY_GoalsForPartner= gql`
+ export const Get_GoalsForPartner= gql`
  query {
   GFP {
     goalTitle

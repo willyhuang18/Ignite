@@ -1,7 +1,9 @@
 import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import {Get_GoalsForPartner} from '../../utils/queries';
 
+const List = ()=>{
 
-const List = ({GFP})=>{
     return (
         <>
         {GFP.map((GFP)=> (
