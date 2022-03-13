@@ -18,7 +18,7 @@ const Goals = () => {
 };
 
 const style = {
-  "backgroundColor": "lightblue",
+  "backgroundImage": "linear-gradient(to right bottom, #bf1d8f, #a74fba, #8370d8, #538ae8, #129feb)",
   "width": "auto",
   "height": "280px",
   "overflow": "scroll"
