@@ -90,6 +90,22 @@ const Dashboard= () => {
                             <Questionnaire />
                           </Modal.Body>
                         </Modal>
+                        <h3 className='h3'>{name}</h3>
+
+                        <br />
+                        <button className='button'>{name} 's Love Language: <br /> </button>
+
+                        {/* Questionnaire Modal */}
+                        <button className='button mt-2' onClick={openModal}>Discover Your Love Language!</button>
+                        <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
+                          <Modal.Header closeButton>
+                            <Modal.Title>Discover Your Love Language</Modal.Title>
+                          </Modal.Header>
+
+                          <Modal.Body>
+                            <Questionnaire />
+                          </Modal.Body>
+                        </Modal>
                     </div>
                   </div>
                   <div className='col-6 d-flex justify-content-center mx-3'>
