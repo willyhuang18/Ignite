@@ -14,6 +14,13 @@ const Counter=()=>{
       };
     return(
         <>
+            <div className="row">
+            <h1>{count}</h1>
+            </div>
+            <div className="row">
+
+            </div>
+             
         </>
     );
 }
