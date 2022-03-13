@@ -5,11 +5,7 @@ import './Questionnaire.css'
 
 export default function Questionnaire() {
     const [selectedQuestion, setSelectedQuestion] = useState(0);
-    // create a variable for each love type
-    // display & iterate through each question
-    // if the user selects option1, sum 1 to PT variable, etc.
-    // At the end, the category with the most points will be chosen as the users love type
-    // If there is a tie, use math.random
+
     const questions = [
         {
             'physicalTouchAnswer': 'pulls me close and cuddles me while we watch a movie',
@@ -69,22 +65,96 @@ export default function Questionnaire() {
         }
     ]
 
-    // $('.submit').style.display = 'none';
+    let physicalTouch = 0;
+    let qualityTime = 0;
+    let actsOfService = 0;
+    let wordsOfAffirmation = 0;
+    let gifts = 0;
 
-    function nextQuestion() {
-        setSelectedQuestion(selectedQuestion + 1);
+        // create a variable for each love type
+    // When the user clicks on an answer, the associated love language sum will increase by 1
+    // At the end, the category with the most points will be chosen as the users love type
+    // If there is a tie, use math.random
+
+
+    function nextQuestion(index) {
+
+        // when the user clicks an answer, 1 point will be added to the corresponding love language
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // THIS WAY, ONLY PHYSICAL TOUCH INCREMENTS TO 1 AND STAYS AT ONE
+        // if ($('.option1').on('click')) {
+        //     physicalTouch+= 1
+        // }
+        // else if ($('.option2').on('click')) { 
+        //     qualityTime+=1
+        // }
+        // else if ($('.option3').on('click')) {
+        //     actsOfService+=1
+        // }
+        // else if ($('.option4').on('click')) {
+        //     wordsOfAffirmation+=1
+        // }
+        // else {
+        //     gifts+=1
+        // }
+        // -------------------------------------------------------------------------------------------------------------------------- 
+
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // THIS WAY EVERYTHING SHOWS UP AS 0  
+        // $('.option1').on('click', function(){
+        //     physicalTouch += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     qualityTime += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     actsOfService += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     wordsOfAffirmation += 1
+        // });
+        // $('.option1').on('click', function(){
+        //     gifts += 1
+        // });
+        // -------------------------------------------------------------------------------------------------------------------------- 
+
+        // -------------------------------------------------------------------------------------------------------------------------- 
+        // This way, everything changes to 1 (even though it's not the proper syntax.)
+        // $('.option1').on('click', physicalTouch++)
+        // $('.option2').on('click',qualityTime++)
+        // $('.option3').on('click',actsOfService++)
+        // $('.option4').on('click',wordsOfAffirmation++)
+        // $('.option5').on('click',gifts++)
+        // -------------------------------------------------------------------------------------------------------------------------- 
+
+        console.log('physical touch equals');
+        console.log(physicalTouch)
+
+        console.log('quality time equals');
+        console.log(qualityTime)
+
+        console.log('acts of service equals');
+        console.log(actsOfService)
+
+        console.log('words equals');
+        console.log(wordsOfAffirmation)
+
+        console.log('gifts equals');
+        console.log(gifts)
+
+        // setSelectedQuestion(selectedQuestion + 1);
         // if the user is on the last question display the 'submit' button
-        if (selectedQuestion === questions.length - 1) {
-            $('.submit').style.display = 'block';
-        }
-    }
+    //     if (index === [7]) {
+    //         $('.submit').style.display = 'block';
+    //     }
+    // }
 
     // When the submit button is clicked, display the result
     // function submitQuestionnaire() {
 
     // }
-
-    // When the user clicks on an answer, the associated love language sum will increase by 1
 
     return (
         <>
@@ -102,32 +172,32 @@ export default function Questionnaire() {
                         return (
                             <>
                                 <div class="allAnswers">
-                                    <button type="radio" className="my-3 option" value="physicalTouchAnswer">
-                                        <p className="option1" onClick={nextQuestion}>
+                                    <button onClick={nextQuestion} type="radio" className="my-3 option1" value="physicalTouchAnswer">
+                                        <p>
                                             {question.physicalTouchAnswer}
                                         </p>
                                     </button>
 
-                                    <button type="radio" className="my-3 option" value="qualityTimeAnswer">
-                                        <p className="option2" onClick={nextQuestion}>
+                                    <button onClick={nextQuestion} type="radio" className="my-3 option2" value="qualityTimeAnswer">
+                                        <p>
                                             {question.qualityTimeAnswer}
                                         </p>
                                     </button>
 
-                                    <button type="radio" name="my-3 option" value="actsOfServiceAnswer">
-                                        <p className="option3" onClick={nextQuestion}>
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option3" value="actsOfServiceAnswer">
+                                        <p>
                                             {question.actsOfServiceAnswer}
                                         </p>
                                     </button>
 
-                                    <button type="radio" name="my-3 option" value="wordsOfAffirmationAnswer">
-                                        <p className="option4" onClick={nextQuestion}>
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option4" value="wordsOfAffirmationAnswer">
+                                        <p>
                                             {question.wordsOfAffirmationAnswer}
                                         </p>
                                     </button>
 
-                                    <button type="radio" name="my-3 option" value="giftsAnswer">
-                                        <p className="option5" onClick={nextQuestion}>
+                                    <button onClick={nextQuestion} type="radio" name="my-3 option5" value="giftsAnswer">
+                                        <p>
                                             {question.giftsAnswer}
                                         </p>
                                     </button>
