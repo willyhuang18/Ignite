@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import $ from 'jquery'
 import './Questionnaire.css'
+import Result from './Result.js'
+
 
 let physicalTouch = 0;
 let qualityTime = 0;
@@ -109,6 +111,14 @@ export default function Questionnaire() {
         setSelectedQuestion(selectedQuestion + 1);
     }
 
+    if (setSelectedQuestion === questions.length) {
+        $('.questionnaire').hide();
+    }
+
+    if (physicalTouch > qualityTime) {
+        console.log('Your Love Language is Physical Touch!')
+    }
+
     return (
         <>
             <div className="questionnaire">
@@ -159,21 +169,17 @@ export default function Questionnaire() {
                                 <br />
                             </>
                         )
-
+                    } else if (index === questions.length) {
+                        return <Result />
                     }
                 }
-                )
-                }
-
-                {/* Buttons */}
-                <div className="controls mt-5">
-                    <button className="submit">Submit</button>
-                    {/* onClick={submitQuestionnaire} */}
-                </div>
+                )}
+                {/* if (index === {questions.length}) {
+                    <div>
+                        <h1> AND WE'RE DONE! </h1>
+                    </div>
+                } */}
             </div>
-
-            <div className="result"> </div>
-
         </>
     )
 }
