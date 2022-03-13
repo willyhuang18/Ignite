@@ -60,7 +60,6 @@ const Dashboard= () => {
       {Auth.loggedIn() ? (
         <>
           <div className='d-flex flex-row justify-content-between'>
-
             <div className='question'>
               <div className='upper-container '>
                 <h1>Ignite
@@ -69,15 +68,15 @@ const Dashboard= () => {
                 </h1>
                 <div className='row '>
                   <div className="col-4 mx-5">
-                    <div className="image-container">
+                    <div className="image-container ">
                       <img className="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
                       <span className='upload-button'><FaCamera /></span>
                       <input className="file-upload" type="file" accept="image/*" />
                     </div>
                     <div className='lower-container'>
-                        <div >
-                          <h3>{name}</h3>
-                        </div>
+                      
+                          <h3 className='h3'>{name}</h3>
+
                         <br />
                         <button className='button'>{name} 's Love Language: <br /> </button>
 
@@ -92,8 +91,22 @@ const Dashboard= () => {
                             <Questionnaire />
                           </Modal.Body>
                         </Modal>
+                        <h3 className='h3'>{name}</h3>
 
-                      
+                        <br />
+                        <button className='button'>{name} 's Love Language: <br /> </button>
+
+                        {/* Questionnaire Modal */}
+                        <button className='button mt-2' onClick={openModal}>Discover Your Love Language!</button>
+                        <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
+                          <Modal.Header closeButton>
+                            <Modal.Title>Discover Your Love Language</Modal.Title>
+                          </Modal.Header>
+
+                          <Modal.Body>
+                            <Questionnaire />
+                          </Modal.Body>
+                        </Modal>
                     </div>
                   </div>
                   <div className='col-6'>
