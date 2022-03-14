@@ -8,7 +8,7 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 ">
+    <footer className=" footer mt-auto ">
       <div className="container text-center mb-5 header">
         {location.pathname !== '/' && (
           <div className='d-inline-block'>

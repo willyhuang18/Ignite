@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <div className="flex-column ">
+    <div className="flex-column bg">
           {Auth.loggedIn() ? (
               <nav className="navbar sticky-top">
                   <div className="container-fluid header">
@@ -18,12 +18,12 @@ const Header = () => {
                         <h1><span className='span'><img src={logo} alt="fire-heart" className='fire'/>Ignite</span></h1>
                       </div>
                       <div className="d-flex">
-                      <a href="/" type="button" className=" m-1 text-light" aria-current="page"><span> Homepage</span>
+                      <Link to="/" type="button" className=" m-1 text-light" aria-current="page"><span> Homepage</span>
                           <div className="liquid"></div>
-                      </a>
-                      <a href="#" id="logout" className="m-1 text-light" type="submit" onClick={logout}><span> Log out</span>
+                      </Link>
+                      <Link to="/" id="logout" className="m-1 text-light" type="submit" onClick={logout}><span> Log out</span>
                           <div className="liquid"></div>
-                      </a>
+                      </Link>
                       </div>
                   </div>
               </nav>
@@ -34,10 +34,9 @@ const Header = () => {
                           <h1><span className='span'><img src={logo} alt="fire-heart" className='fire'/>Ignite</span></h1>
                         </div>
                         <div className='d-flex'>
-                        <Link href="/signup" type="button" className=" btn active  m-1 text-light" aria-current="page" ><span> Sign up</span>
+                        <Link to="/signup" type="button" className=" btn active  m-1 text-light" aria-current="page" ><span> Sign up</span>
                             <div className="liquid"></div>
                         </Link>
-                        
                         <Link to="/login" className=" btn text-light"  ><span> Log In</span>
                             <div className="liquid"></div>
                         </Link>
