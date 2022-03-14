@@ -11,8 +11,8 @@
 * [License](#license)
 
 ## Description
-Staying in a healthy romantic relationships requires consistent effort and dedication to our partners. As we often find - maintaining a strong relationship can be a challenge when life gets busy, and as we grow and change as individuals. We created Ignite to help couples connect, communicate, and find new ways to make one another feel loved. <br />
-Our application allows the couple to have a shared account where they have access to a couple's dashboard with a few great features. Couples will have access to a 'Question of the Day' that will spark conversations and allow for a deeper understanding of one another. Each partner will also complete a questionnaire that will determine the primary way in which they feel loved. Additionally, each partner will have access to a list that will give them suggestions on how to make their partner feel most loved, based on the results of their questionnaire. 
+Healthy romantic relationships require consistent effort and dedication. As we often find - maintaining a strong relationship can be a challenge when life gets busy, and as we grow and change as individuals. We created Ignite to help couples connect, communicate, and find new ways to make one another feel loved. <br />
+Our application allows couples to have a shared account where they have access to a dashboard with a several great features. Couples will have access to a 'Question of the Day' that will spark conversations and allow for a deeper understanding of one another. Each partner will also complete a questionnaire that will determine the primary way in which they feel loved. Additionally, each partner will have access to a list that will give them suggestions on how to make their partner feel most loved, based on the results of their questionnaire. 
 
 
 ## Demo and Site Link
@@ -21,11 +21,25 @@ Our application allows the couple to have a shared account where they have acces
 
 
 ## Installation
+To run this application, there are many packages that must be installed. Once you are in the root directory, run the following script:
 
+``` 
+npm install
+```
+
+Once all dependencies are installed, you can run the following script to view the application:
+```
+npm run develop 
+```
 
 ## Technology Stack
 * React
+* JSX
 * Bootstrap
+* Node js
+* CSS
+* HTML 
+
 
 ## Code Snippets
 
@@ -54,6 +68,6 @@ Our application allows the couple to have a shared account where they have acces
 
 
 ## License
-MIT License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+MIT License <br/>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br/>
 Copyright (c) 2022 Pangta Huang, Joshua Meza, Elliot Park, Leslie Patino
