@@ -102,5 +102,8 @@ img{
 
 .qotd {
     text-align: center;
-    border-style: solid; 
+    border: 3px solid black;
+    color: white;
+    background-color: rgb(99, 29, 29);
+    border-radius: 25px;
 }

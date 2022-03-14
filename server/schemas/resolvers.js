@@ -11,7 +11,7 @@ const resolvers = {
       return User.find(); //.populate('questionnaire');
     },
     user: async (parent, { username, username2 }) => {
-      return User.findOne({ username, username2}); //.populate('questionnaire');
+      return User.findOne({ username, username2 }); //.populate('questionnaire');
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -19,7 +19,7 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    GFP: async ()=> {
+    GFP: async () => {
       return await GoalsForPartner.find({});
     },
   },
@@ -46,6 +46,10 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addLoveLanguage: async (parent, { username, username2, loveLanguage1, loveLanguage2 }) => {
+      const user = await User.create({ username, username2, loveLanguage1, loveLanguage2 });
+      return { user };
     },
   },
 };

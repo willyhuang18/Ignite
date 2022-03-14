@@ -115,29 +115,26 @@ export default function Questionnaire() {
             setSelectedQuestion(nextQuestion);
         } else {
             setShowResult(true)
+            displayLoveLanguage()
         }
     }
 
+
     function displayLoveLanguage() {
         if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
-            // setLoveLanguage('Physical Touch')
-            // $('.questionnaireResult').innerText('Physical Touch');
+            setLoveLanguage('Physical Touch')
             console.log('physicaaaaal');
         } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
-            // setLoveLanguage('Quality Time')
-            // $('.questionnaireResult').innerText('Quality Time');
+            setLoveLanguage('Quality Time')
             console.log('quaaaality');
         } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
-            // setLoveLanguage('Acts of Service')
-            // $('.questionnaireResult').innerText('Acts of Service');
+            setLoveLanguage('Acts of Service')
             console.log('serviceeeeeee');
         } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
-            // setLoveLanguage('Words of Affirmation')
-            // $('.questionnaireResult').innerText('Words of Affirmation');
+            setLoveLanguage('Words of Affirmation')
             console.log('wordssssss'); 
         } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
-            // setLoveLanguage('Gifts')
-            // $('.questionnaireResult').innerText('Gifts');
+            setLoveLanguage('Gifts')
             console.log('giftsssss');
         }
     }
@@ -145,7 +142,6 @@ export default function Questionnaire() {
         <div>
             {showResult ? (
                 <div>
-                {displayLoveLanguage()}
                     <h3> Your Love Language is {loveLanguage}
                     </h3>
                 </div>

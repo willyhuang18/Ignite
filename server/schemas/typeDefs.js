@@ -7,6 +7,8 @@ const typeDefs = gql`
     username2: String
     email: String!
     password: String!
+    loveLanguage1: String
+    loveLanguage2: String
   }
 
   type Auth {
@@ -37,9 +39,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!,username2: String! , email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addLoveLanguage(username: String, username2: String, loveLanguage1: String, loveLanguage2: String) : User
   }
 `;
 
 module.exports = typeDefs;
-
-//  questionnaire: [Questionnaire]

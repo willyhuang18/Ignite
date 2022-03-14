@@ -34,3 +34,17 @@ export const ADD_GFP = gql`
     }
   }
 `;
+
+export const ADD_LOVE_LANGUAGE = gql`
+  mutation addLoveLanguage($username: String!,$username2: String!, $loveLanguage1: String!, $loveLanguage2: String!) {
+    addLoveLanguage(username: $username, username2: $username2, loveLanguage1: $loveLanguage1, loveLanguage2: $loveLanguage2,) {
+      user {
+        _id
+        username
+        username2
+        loveLanguage1
+        loveLanguage2
+      }
+    }
+  }
+`;
