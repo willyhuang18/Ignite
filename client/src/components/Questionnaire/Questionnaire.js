@@ -110,10 +110,16 @@ export default function Questionnaire() {
         console.log(gifts)
 
         // this will display the next question in the questions array
-        setSelectedQuestion(selectedQuestion + 1);
-        if (selectedQuestion + 1 > questions.length) {
-            setShowResult(true)
-        }
+        const nextQuestion = selectedQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setSelectedQuestion(nextQuestion);
+      } else {
+        setShowResult(true)
+      }
+        // setSelectedQuestion(selectedQuestion + 1);
+        // if (selectedQuestion > questions.length) {
+        //     setShowResult(true)
+        // }
     }
 
     if (setSelectedQuestion === questions.length) {
@@ -125,8 +131,12 @@ export default function Questionnaire() {
     }
 
     return (
-        <>
+        <div>
             {showResult ? (
+                <div>
+                    <h1> AND YOUR LOVE LANGUAGE IS... </h1>
+                </div>
+                ) : (
                 <div className="questionnaire">
                     <div className="questionTitle text-center">
                         <strong>
@@ -134,12 +144,10 @@ export default function Questionnaire() {
                         </strong>
                     </div>
                     <br />
-
                     {/* QUESTIONNAIRE BEGINS */}
                     {questions.map((question, index) => {
                         if (index === selectedQuestion) {
                             return (
-                                <>
                                     <div class="allAnswers">
                                         {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
                                         <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
@@ -172,18 +180,14 @@ export default function Questionnaire() {
                                             </p>
                                         </button>
                                     </div>
-                                    <br />
-                                </>
-                            )
+                                )
+                            }
                         }
-                    }
                     )}
-                    ) : (
-                    <div>
-                        <h1> AND YOUR LOVE LANGUAGE IS... </h1>
-                    </div>›
                 </div>
-            )}
-    )
-        </>
-}
+                )}
+        </div>
+    )}
+             
+                    
+                    
