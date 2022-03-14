@@ -113,7 +113,7 @@ const Dashboard= () => {
                     </div>
                   </div>
                   <div className='col-6'>
-                    <div className='row px-5' >
+                    <div className='row' >
                      {/* <QuestionOfTheDay/> */}
                       {/* <img src={heart} alt='heart' /> */}
                       <h3 className='h3'>{Auth.getName().data.username} 's list </h3>
@@ -121,7 +121,7 @@ const Dashboard= () => {
                     </div>
                     <div className="row">
                     <h3 className='h3'>{Auth.getName().data.username2} 's list </h3>
-                      <Goals/>
+                      <Goals />
                     </div>
                   </div>
                 </div>
