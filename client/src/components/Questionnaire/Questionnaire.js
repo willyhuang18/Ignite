@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import $ from 'jquery'
 import './Questionnaire.css'
-import Result from './Result.js'
+// import Result from './Result.js'
 
 
 let physicalTouch = 0;
@@ -12,6 +12,8 @@ let gifts = 0;
 
 export default function Questionnaire() {
     const [selectedQuestion, setSelectedQuestion] = useState(0);
+    const [showResult, setShowResult] = useState(false);
+
 
     const questions = [
         {
@@ -109,6 +111,9 @@ export default function Questionnaire() {
 
         // this will display the next question in the questions array
         setSelectedQuestion(selectedQuestion + 1);
+        if (selectedQuestion + 1 > questions.length) {
+            setShowResult(true)
+        }
     }
 
     if (setSelectedQuestion === questions.length) {
@@ -121,65 +126,64 @@ export default function Questionnaire() {
 
     return (
         <>
-            <div className="questionnaire">
-                <div className="questionTitle text-center">
-                    <strong>
-                        It's MOST meaningful when my partner...
-                    </strong>
-                </div>
-                <br />
-
-                {/* QUESTIONNAIRE BEGINS */}
-                {questions.map((question, index) => {
-                    if (index === selectedQuestion) {
-                        return (
-                            <>
-                                <div class="allAnswers">
-                                    {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
-                                    <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
-                                        <p>
-                                            {question.physicalTouchAnswer}
-                                        </p>
-                                    </button>
-
-                                    <button onClick={() => nextQuestion(2)} type="radio" className="my-3 option2">
-                                        <p>
-                                            {question.qualityTimeAnswer}
-                                        </p>
-                                    </button>
-
-                                    <button onClick={() => nextQuestion(3)} type="radio" name="my-3 option3">
-                                        <p>
-                                            {question.actsOfServiceAnswer}
-                                        </p>
-                                    </button>
-
-                                    <button onClick={() => nextQuestion(4)} type="radio" name="my-3 option4">
-                                        <p>
-                                            {question.wordsOfAffirmationAnswer}
-                                        </p>
-                                    </button>
-
-                                    <button onClick={() => nextQuestion(5)} type="radio" name="my-3 option5">
-                                        <p>
-                                            {question.giftsAnswer}
-                                        </p>
-                                    </button>
-                                </div>
-                                <br />
-                            </>
-                        )
-                    } else if (index === questions.length) {
-                        return <Result />
-                    }
-                }
-                )}
-                {/* if (index === {questions.length}) {
-                    <div>
-                        <h1> AND WE'RE DONE! </h1>
+            {showResult ? (
+                <div className="questionnaire">
+                    <div className="questionTitle text-center">
+                        <strong>
+                            It's MOST meaningful when my partner...
+                        </strong>
                     </div>
-                } */}
-            </div>
-        </>
+                    <br />
+
+                    {/* QUESTIONNAIRE BEGINS */}
+                    {questions.map((question, index) => {
+                        if (index === selectedQuestion) {
+                            return (
+                                <>
+                                    <div class="allAnswers">
+                                        {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
+                                        <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
+                                            <p>
+                                                {question.physicalTouchAnswer}
+                                            </p>
+                                        </button>
+
+                                        <button onClick={() => nextQuestion(2)} type="radio" className="my-3 option2">
+                                            <p>
+                                                {question.qualityTimeAnswer}
+                                            </p>
+                                        </button>
+
+                                        <button onClick={() => nextQuestion(3)} type="radio" name="my-3 option3">
+                                            <p>
+                                                {question.actsOfServiceAnswer}
+                                            </p>
+                                        </button>
+
+                                        <button onClick={() => nextQuestion(4)} type="radio" name="my-3 option4">
+                                            <p>
+                                                {question.wordsOfAffirmationAnswer}
+                                            </p>
+                                        </button>
+
+                                        <button onClick={() => nextQuestion(5)} type="radio" name="my-3 option5">
+                                            <p>
+                                                {question.giftsAnswer}
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <br />
+                                </>
+                            )
+                        }
+                    }
+                    )}
+                    ) : (
+                    <div>
+                        <h1> AND YOUR LOVE LANGUAGE IS... </h1>
+                    </div>›
+                </div>
+            )}
     )
+        </>
 }
