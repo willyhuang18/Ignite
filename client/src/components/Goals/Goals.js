@@ -13,7 +13,7 @@ const Goals = () => {
 };
 
 const style = {
-  "backgroundImage": "linear-gradient(to right bottom, #bf1d8f, #a74fba, #8370d8, #538ae8, #129feb)",
+  "backgroundImage": "radial-gradient(circle, #e07373, #ea908c, #f3ada6, #fac9c3, #ffe5e1)",
   "width": "500px",
   "height": "280px",
   "overflow": "scroll",
