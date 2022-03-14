@@ -39,7 +39,7 @@ var love = setInterval(function() {
             $(this).detach();
         }
     });
-}, 500);
+}, 2000);
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
