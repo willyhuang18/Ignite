@@ -63,8 +63,12 @@ const Dashboard= () => {
               <div className='upper-container '>
                 <h1>Ignite
                   <br />
-                  A couple App
+                  A Couples App
                 </h1>
+                <div className="container qotd">
+                <h4 className='qotd-title'>Question Of The Day</h4>
+                      <QuestionOfTheDay />
+                </div>
                 <div className='row '>
                   <div className="col-4 mx-5">
                     <div className="image-container ">
@@ -110,8 +114,6 @@ const Dashboard= () => {
                   </div>
                   <div className='col-6'>
                     <div className='row px-5' >
-                     {/* <QuestionOfTheDay/> */}
-                      <img src={heart} alt='heart' />
                       
                     </div>
                     <div className="row">

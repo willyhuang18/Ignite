@@ -146,7 +146,7 @@ export default function Questionnaire() {
             {showResult ? (
                 <div>
                 {displayLoveLanguage()}
-                    <h3> Your Love Language is 
+                    <h3> Your Love Language is {loveLanguage}
                     </h3>
                 </div>
             ) : (
