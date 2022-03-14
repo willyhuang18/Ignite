@@ -37,9 +37,11 @@ const Header = () => {
                         <a href="/signup" type="button" className=" btn active  m-1 text-light" aria-current="page" ><span> Sign up</span>
                             <div className="liquid"></div>
                         </a>
-                        <a href="/login" className=" btn text-light" type="submit" ><span> Log In</span>
+                        
+                        <Link to="/login" className=" btn text-light"  ><span> Log In</span>
                             <div className="liquid"></div>
-                        </a>
+                        </Link>
+                        
                         </div>
                     </div>
                 </div>
