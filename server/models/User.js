@@ -25,12 +25,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 2,
   },
-  // questionnaire: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Questionnaire',
-  //   },
-  // ],
+  loveLanguage1: {
+    type: String,
+  },
+  loveLanguage2: {
+    type: String,
+  },
 });
 
 userSchema.pre('save', async function (next) {
