@@ -4,13 +4,14 @@ import { Get_GoalsForPartner } from "../../utils/queries";
 import Card from "react-bootstrap/Card";
 import Counter from "./Counter";
 const List = () => {
-  const { error, loading, data } = useQuery(Get_GoalsForPartner);
-  const [GFP, getGFP] = useState([]);
-  useEffect(() => {
-    if (data) {
-      getGFP(data.GFP);
-    }
-  }, [data]);
+//   const { error, loading, data } = useQuery(Get_GoalsForPartner);
+//   const [GFP, getGFP] = useState([]);
+//   useEffect(() => {
+//     if (data) {
+//       getGFP(data.GFP);
+//     }
+    
+//   }, [data]);
 
   return (
     <>
