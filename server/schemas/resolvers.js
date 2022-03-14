@@ -48,7 +48,9 @@ const resolvers = {
       return { token, user };
     },
     addLoveLanguage: async (parent, { username, username2, loveLanguage1, loveLanguage2 }) => {
-      const user = await User.create({ username, username2, loveLanguage1, loveLanguage2 });
+      const user = await User.findOneAndUpdate({username: username}, {loveLanguage1: loveLanguage1, loveLanguage2: loveLanguage2}, {
+        new: true
+      });
       return { user };
     },
   },
