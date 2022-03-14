@@ -1,17 +1,28 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Button from "./Button";
 
 
 const Counter=()=>{
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0); 
+   
 
     let incrementCount = () => {
         setCount(count + 1);
+        localStorage.setItem("count", count);
       };
     
       let decrementCount = () => {
         setCount(count - 1);
+        localStorage.setItem("count", count);
       };
+
+      useEffect(() => {
+        const initialValue = localStorage.getItem("count");
+        if (initialValue) setCount(initialValue);
+      }, []);
+    
+      
+      console.log(localStorage.getItem("count"));
     return(
         <>
             <div className="row">
