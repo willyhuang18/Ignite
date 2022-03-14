@@ -111,8 +111,8 @@ const Dashboard= () => {
                   <div className='col-6'>
                     <div className='row px-5' >
                      {/* <QuestionOfTheDay/> */}
-                      <img src={heart} alt='heart' />
-                      
+                      {/* <img src={heart} alt='heart' /> */}
+                      <Goals/>
                     </div>
                     <div className="row">
                       <Goals/>
