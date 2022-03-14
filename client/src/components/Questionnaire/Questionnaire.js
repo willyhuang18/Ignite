@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import $ from 'jquery'
 import './Questionnaire.css'
-// import Result from './Result.js'
 
 
 let physicalTouch = 0;
@@ -111,32 +110,41 @@ export default function Questionnaire() {
 
         // this will display the next question in the questions array
         const nextQuestion = selectedQuestion + 1;
-      if (nextQuestion < questions.length) {
-        setSelectedQuestion(nextQuestion);
-      } else {
-        setShowResult(true)
-      }
-        // setSelectedQuestion(selectedQuestion + 1);
-        // if (selectedQuestion > questions.length) {
-        //     setShowResult(true)
-        // }
+        if (nextQuestion < questions.length) {
+            setSelectedQuestion(nextQuestion);
+        } else {
+            setShowResult(true)
+        }
     }
 
-    if (setSelectedQuestion === questions.length) {
-        $('.questionnaire').hide();
+    function displayLoveLanguage() {
+        if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
+            $('.questionnaireResult').innerText('Physical Touch');
+            console.log('physicaaaaal');
+        } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
+            $('.questionnaireResult').innerText('Quality Time');
+            console.log('quaaaality');
+        } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
+            $('.questionnaireResult').innerText('Acts of Service');
+            console.log('serviceeeeeee');
+        } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
+            $('.questionnaireResult').innerText('Words of Affirmation');
+            console.log('wordssssss'); 
+        } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
+            $('.questionnaireResult').innerText('Gifts');
+            console.log('giftsssss');
+        }
     }
-
-    if (physicalTouch > qualityTime) {
-        console.log('Your Love Language is Physical Touch!')
-    }
-
     return (
         <div>
             {showResult ? (
                 <div>
-                    <h1> AND YOUR LOVE LANGUAGE IS... </h1>
+                {displayLoveLanguage()}
+                    <h3> Your Love Language is 
+                        <span className="questionnaireResult"> </span>
+                    </h3>
                 </div>
-                ) : (
+            ) : (
                 <div className="questionnaire">
                     <div className="questionTitle text-center">
                         <strong>
@@ -148,46 +156,46 @@ export default function Questionnaire() {
                     {questions.map((question, index) => {
                         if (index === selectedQuestion) {
                             return (
-                                    <div class="allAnswers">
-                                        {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
-                                        <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
-                                            <p>
-                                                {question.physicalTouchAnswer}
-                                            </p>
-                                        </button>
+                                <div class="allAnswers">
+                                    {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
+                                    <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
+                                        <p>
+                                            {question.physicalTouchAnswer}
+                                        </p>
+                                    </button>
 
-                                        <button onClick={() => nextQuestion(2)} type="radio" className="my-3 option2">
-                                            <p>
-                                                {question.qualityTimeAnswer}
-                                            </p>
-                                        </button>
+                                    <button onClick={() => nextQuestion(2)} type="radio" className="my-3 option2">
+                                        <p>
+                                            {question.qualityTimeAnswer}
+                                        </p>
+                                    </button>
 
-                                        <button onClick={() => nextQuestion(3)} type="radio" name="my-3 option3">
-                                            <p>
-                                                {question.actsOfServiceAnswer}
-                                            </p>
-                                        </button>
+                                    <button onClick={() => nextQuestion(3)} type="radio" name="my-3 option3">
+                                        <p>
+                                            {question.actsOfServiceAnswer}
+                                        </p>
+                                    </button>
 
-                                        <button onClick={() => nextQuestion(4)} type="radio" name="my-3 option4">
-                                            <p>
-                                                {question.wordsOfAffirmationAnswer}
-                                            </p>
-                                        </button>
+                                    <button onClick={() => nextQuestion(4)} type="radio" name="my-3 option4">
+                                        <p>
+                                            {question.wordsOfAffirmationAnswer}
+                                        </p>
+                                    </button>
 
-                                        <button onClick={() => nextQuestion(5)} type="radio" name="my-3 option5">
-                                            <p>
-                                                {question.giftsAnswer}
-                                            </p>
-                                        </button>
-                                    </div>
-                                )
-                            }
+                                    <button onClick={() => nextQuestion(5)} type="radio" name="my-3 option5">
+                                        <p>
+                                            {question.giftsAnswer}
+                                        </p>
+                                    </button>
+                                </div>
+                            )
                         }
+                    }
                     )}
                 </div>
-                )}
+            )}
         </div>
-    )}
-             
-                    
-                    
+    )
+}
+
+
