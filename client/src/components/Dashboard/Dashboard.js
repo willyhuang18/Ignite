@@ -110,7 +110,7 @@ const Dashboard= () => {
                   </div>
                   <div className='col-6'>
                     <div className='row px-5' >
-                     <QuestionOfTheDay/>
+                     {/* <QuestionOfTheDay/> */}
                       <img src={heart} alt='heart' />
                       
                     </div>

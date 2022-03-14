@@ -20,10 +20,10 @@ const QuestionOfTheDay = () => {
   return (
     <>
       Question of The Day
-      {/* {questionOfTheDay.map((question) => (
+      {questionOfTheDay.Math.floor(Math.random() * ((question) => (
         <li key={question._id}>{question.question}</li>
-      ))} */}
-      <p>{questionOfTheDay[randomNum].question}</p>
+      )))}
+      {/* <p>{questionOfTheDay[randomNum].question}</p> */}
     </>
   );
 };
