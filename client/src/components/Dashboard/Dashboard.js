@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap';
 import heart from '../../heart.png'
 import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
-import QuestionOfTheDay from '../QuestionOfTheDay/QuestionOfTheDay';
+import QuestionOfTheDay2 from '../QuestionOfTheDay/QuestionOfTheDay2';
 import './Dashboard.css'
 import Goals from '../Goals/Goals';
 import $ from 'jquery'
@@ -65,6 +65,10 @@ const Dashboard= () => {
                   <br />
                   A couple App
                 </h1>
+                <div className="container qotd">
+                <h4 className='qotd-title'>Question Of The Day</h4>
+                      <QuestionOfTheDay2 />
+                </div>
                 <div className='row '>
                   <div className="col-4 mx-5">
                     <div className="image-container ">
@@ -110,8 +114,7 @@ const Dashboard= () => {
                   </div>
                   <div className='col-6'>
                     <div className='row px-5' >
-                     <QuestionOfTheDay/>
-                      <img src={heart} alt='heart' />
+                  
                       
                     </div>
                     <div className="row">

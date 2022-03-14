@@ -93,3 +93,15 @@ img{
   transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   color: #999;
 }
+
+.qotd-title {
+    font-family: 'Sansita Swashed', cursive;
+    position: relative;
+
+}
+
+.qotd {
+    text-align: center;
+    border-style: solid; 
+}
+
