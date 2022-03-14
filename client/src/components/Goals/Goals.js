@@ -1,10 +1,8 @@
 import React from "react";
 import List from './List';
-import Auth from '../../utils/auth';
 const Goals = () => {
   return (
   <div>
-    {/* <h1 style={title}> {Auth.getName().data.username2} list </h1> */}
    <div style={style} className="">
     <List />
   </div>
