@@ -34,9 +34,9 @@ const Header = () => {
                           <h1><span className='span'><img src={logo} alt="fire-heart" className='fire'/>Ignite</span></h1>
                         </div>
                         <div className='d-flex'>
-                        <a href="/signup" type="button" className=" btn active  m-1 text-light" aria-current="page" ><span> Sign up</span>
+                        <Link href="/signup" type="button" className=" btn active  m-1 text-light" aria-current="page" ><span> Sign up</span>
                             <div className="liquid"></div>
-                        </a>
+                        </Link>
                         
                         <Link to="/login" className=" btn text-light"  ><span> Log In</span>
                             <div className="liquid"></div>
