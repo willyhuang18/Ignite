@@ -97,6 +97,7 @@ export default function Questionnaire2(){
 
         if (index === 1) {
             physicalTouch2 += 1
+            console.log('is this running?!?!?!?!');
         }
         else if (index === 2) {
             qualityTime2 += 1
@@ -112,6 +113,7 @@ export default function Questionnaire2(){
         }
 
         console.log('physical touch equals');
+        // console.log(physicalTouch);
         console.log(physicalTouch2)
 
         console.log('quality time equals');

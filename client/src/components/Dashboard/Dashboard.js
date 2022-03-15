@@ -119,9 +119,10 @@ const Dashboard = () => {
 
 
   // this will open the modal upon click
-  const openModal = () => {
-    setShowContent(true)
-    setShowContent2(true)
+  const openModal = (partner) => {
+    if (partner === 1) {
+      setShowContent(true)
+    } else { setShowContent2(true) }
   }
 
   // const openModal = () => {
@@ -228,7 +229,7 @@ const Dashboard = () => {
                     <h3 className='h3'>{Auth.getName().data.username}</h3>
                     <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
                     {/* Partner 1's Questionnaire Modal */}
-                    <button className='button mt-2' data-whichuser="1" onClick={openModal}>
+                    <button className='button mt-2' data-whichuser="1" onClick={() => openModal(1)}>
                       Discover Your Love Language!
                     </button>
                     <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
@@ -251,12 +252,12 @@ const Dashboard = () => {
                     <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
                     <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
                     {/* Partner 2's Questionnaire Modal */}
-                    <button className='button mt-2' data-whichuser="2" onClick={openModal}>
+                    <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
                       Discover Your Love Language!
                     </button>
                     <Modal show={showContent2} onHide={closeModal} className="modal-bg">
-                    <Questionnaire2 />
-                    {/* <Modal show={showContent} onHide={closeModal} className="modal-bg">
+                      <Questionnaire2 />
+                      {/* <Modal show={showContent} onHide={closeModal} className="modal-bg">
                       <Modal.Header className="modal-header" closeButton>
                         <Modal.Title>Discover Your Love Language</Modal.Title>
                       </Modal.Header>
@@ -266,7 +267,7 @@ const Dashboard = () => {
                         />
                       </Modal.Body>
 */}
-                    </Modal> 
+                    </Modal>
                   </div>
                 </div>
 
