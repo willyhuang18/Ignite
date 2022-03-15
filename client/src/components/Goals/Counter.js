@@ -8,18 +8,18 @@ const Counter=()=>{
 
     let incrementCount = () => {
         setCount(count + 1);
-        localStorage.setItem("count", count);
+        // localStorage.setItem("count", count);
       };
     
       let decrementCount = () => {
         setCount(count - 1);
-        localStorage.setItem("count", count);
+        // localStorage.setItem("count", count);
       };
 
-      useEffect(() => {
-        const initialValue = localStorage.getItem("count");
-        if (initialValue) setCount(initialValue);
-      }, []);
+      // useEffect(() => {
+      //   const initialValue = localStorage.getItem("count");
+      //   if (initialValue) setCount(initialValue);
+      // }, []);
     
       
       console.log(localStorage.getItem("count"));
