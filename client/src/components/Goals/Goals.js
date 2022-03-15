@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import List from "./List";
 import { useQuery, gql } from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
+import Auth from '../../utils/auth';
 const Goals = () => {
   const { error, loading, data } = useQuery(Get_GoalsForPartner);
   const [user1Data, setuser1] = useState([]);
@@ -25,12 +26,14 @@ const Goals = () => {
   return (
     <div>
       <div className="row">
+      <h3 className='h3'>{Auth.getName().data.username} 's list </h3>
         <div style={style} className="">
           <List user={user1goals} />
         </div>
       </div>
 
       <div className="row">
+      <h3 className='h3'>{Auth.getName().data.username2} 's list </h3>
         <div style={style} className="">
           <List user={user2goals} />
         </div>
