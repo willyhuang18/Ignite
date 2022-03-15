@@ -11,5 +11,4 @@ export default function Button(props) {
     "border": "none",
     "margin": "10px 0 0 0",
     "fontSize": "1em",
-
   }
