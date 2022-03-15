@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <div className="flex-column bg">
+    <div className="flex-column bg mb-5">
           {Auth.loggedIn() ? (
               <nav className="navbar sticky-top">
                   <div className="container-fluid header">

@@ -194,14 +194,14 @@ const Dashboard = () => {
     <>
       {Auth.loggedIn() ? (
         <>
-          <div className='d-flex flex-row justify-content-between'>
+          <div className='col-9 d-flex flex-row justify-content-between'>
             <div className='question'>
               <div className='upper-container '>
                 <h1>Ignite
                   <br />
                   A Couples App
                 </h1>
-                <div className='container qotd'>
+                <div className='container qotd my-4 col-10'>
                   <h4 className='qotd-title'>Question of the Day</h4>
                   <QuestionOfTheDay />
                 </div>

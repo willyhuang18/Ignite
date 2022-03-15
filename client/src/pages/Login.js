@@ -87,10 +87,6 @@ const Login = (props) => {
                 >
                   Log In
                 </button>
-                <div className="social">
-                  <div className="go"><FaGoogle  /> Google</div>
-                  <div className="fb"><FaFacebook /> Facebook</div>
-                </div>
               </form>
             )}
     </main>
