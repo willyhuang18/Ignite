@@ -116,17 +116,18 @@ const Dashboard = () => {
 
 
   // this will open the modal upon click
-  // const openModal = () => {
-  //     setShowContent(true)
-  // }
-
   const openModal = () => {
-    if (Auth.getName().data.username) {
       setShowContent(true)
-    } else if (Auth.getName().data.username2) {
-      setShowContent(true)
-    }
   }
+
+  // const openModal = () => {
+  //   if (Auth.getName().data.username) {
+  //     setShowContent(true)
+  //   }
+  //   if (Auth.getName().data.username2) {
+  //     setShowContent(true)
+  //   }
+  // }
 
 
   // this will close the modal upon click
@@ -242,7 +243,6 @@ const Dashboard = () => {
 
                     <br />
                     <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
-
 
 
 
