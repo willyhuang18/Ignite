@@ -24,14 +24,14 @@ const Goals = () => {
   return (
     <div>
       <div className="row d-flex align-contents-center ">
-      <h3 className='h3'>{Auth.getName().data.username} 's list </h3>
+      <h3 className='h3'> Ways To Make {Auth.getName().data.username} Feel More Loved </h3>
         <div style={style} className="">
           <List user={user1goals} />
         </div>
       </div>
 
       <div className="row">
-      <h3 className='h3'>{Auth.getName().data.username2} 's list </h3>
+      <h3 className='h3'> Ways To Make {Auth.getName().data.username2} Feel More Loved </h3>
         <div style={style} className="">
           <List user={user2goals} />
         </div>
