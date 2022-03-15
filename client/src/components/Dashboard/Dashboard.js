@@ -198,11 +198,8 @@ const Dashboard = () => {
             <div className='question'>
               <div className='upper-container text-center'>
                 <h1>Hey, {Auth.getName().data.username} & {Auth.getName().data.username2}! </h1>
-                {/* <br /> */}
                 <h4 className='mt-0'> Welcome to your couples dashboard :) </h4>
               </div>
-              {/* <h2>Welcome to your couples dashboard!</h2>  */}
-              {/* A Couples App */}
 
               <div className='container qotd my-4 col-10'>
                 <h4 className='qotd-title'>Question of the Day</h4>
@@ -256,8 +253,8 @@ const Dashboard = () => {
                     <button className='button mt-2' data-whichuser="2" onClick={openModal}>
                       Discover Your Love Language!
                     </button>
-                    <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
-                      <Modal.Header closeButton>
+                    <Modal show={showContent} onHide={closeModal} className="modal-bg">
+                      <Modal.Header className="modal-header" closeButton>
                         <Modal.Title>Discover Your Love Language</Modal.Title>
                       </Modal.Header>
 

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 .question {
-    /* width: 950px; */
     height: 1000px;
-    /* max-height: 100%; */
     background: white;
     border-radius: 10px;
     box-shadow: 0px 1px 10px 1px black ;
@@ -107,4 +105,13 @@ img{
     color: white;
     background-color: rgb(99, 29, 29);
     border-radius: 25px;
+}
+
+.modal-bg {
+    background-color: rgb(99, 29, 29);
+}
+
+.modal-header {
+    background-color: #ffe5e1;
+    color: rgb(99, 29, 29);
 }

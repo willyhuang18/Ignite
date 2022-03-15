@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Questionnaire.css'
-import { useMutation } from '@apollo/client';
-import { ADD_LOVE_LANGUAGE } from '../../utils/mutations';
-import AuthService from '../../utils/auth'
+// import { useMutation } from '@apollo/client';
+// import { ADD_LOVE_LANGUAGE } from '../../utils/mutations';
+// import AuthService from '../../utils/auth'
 
 
 
