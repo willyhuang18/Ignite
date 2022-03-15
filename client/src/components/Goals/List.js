@@ -3,19 +3,11 @@ import { useQuery, gql } from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
 import Card from "react-bootstrap/Card";
 import Counter from "./Counter";
-const List = () => {
-//   const { error, loading, data } = useQuery(Get_GoalsForPartner);
-//   const [GFP, getGFP] = useState([]);
-//   useEffect(() => {
-//     if (data) {
-//       getGFP(data.GFP);
-//     }
-    
-//   }, [data]);
-
+const List = (props) => {
+ let {user} = props
   return (
     <>
-      {GFP.map((val) => (
+      {user.map((val) => (
         <li key={val._id}>
           <Card style={cardSt}>
             <Card.Body className="row">

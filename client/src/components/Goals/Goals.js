@@ -12,19 +12,18 @@ const Goals = () => {
     if (data) {
       setuser1(data.GFP);
       setuser2(data.GFP);
-
     }
-   const user1goals = user1Data.filter(goal => goal.loveFilter === "Acts of Service" )
-   const user2goals = user2Data.filter(goal => goal.loveFilter === "Gift Giving" )
-    console.log("user1" , user1goals)
-    console.log("user2" , user2goals)
+    console.log(data)
   }, [data]);
   
+  const user1goals = user1Data.filter(goal => goal.loveFilter === "Acts of Service" )
+   const user2goals = user2Data.filter(goal => goal.loveFilter === "Gift Giving" )
+    console.log("user1:" , user1goals)
   return (
   <div>
    <div style={style} className="">
-    <List goals= {user1goals} />
-    <List goals= {user2goals} />
+    <List user={user1goals}/>
+    {/* <List goals= {user2goals} /> */}
   </div>
   </div>
   );
@@ -39,9 +38,7 @@ const style = {
   "borderWidth": "4px",
 };
 
-const title = {
-  "color": "black"
-}
+
 
 
 export default Goals;
