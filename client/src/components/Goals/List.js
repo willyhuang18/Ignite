@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import Card from "react-bootstrap/Card";
 import Counter from "./Counter";
 const List = (props) => {

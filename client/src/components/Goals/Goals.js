@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery} from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
 import Auth from '../../utils/auth';
 const Goals = () => {
-  const { error, loading, data } = useQuery(Get_GoalsForPartner);
+  const { data } = useQuery(Get_GoalsForPartner);
   const [user1Data, setuser1] = useState([]);
   const [user2Data, setuser2] = useState([]);
 
@@ -13,7 +13,6 @@ const Goals = () => {
       setuser1(data.GFP);
       setuser2(data.GFP);
     }
-    console.log(data);
   }, [data]);
 
   const user1goals = user1Data.filter(
@@ -22,7 +21,6 @@ const Goals = () => {
   const user2goals = user2Data.filter(
     (goal) => goal.loveFilter === "Gift Giving"
   );
-  console.log("user1:", user1goals);
   return (
     <div>
       <div className="row">
