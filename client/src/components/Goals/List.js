@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useQuery, gql } from "@apollo/client";
-import { Get_GoalsForPartner } from "../../utils/queries";
 import Card from "react-bootstrap/Card";
 import Counter from "./Counter";
 const List = (props) => {
