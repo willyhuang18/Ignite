@@ -105,6 +105,7 @@ img{
     color: white;
     background-color: rgb(99, 29, 29);
     border-radius: 25px;
+    margin-left: 60px  !important;
 }
 
 .modal-bg {
