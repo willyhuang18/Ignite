@@ -103,10 +103,6 @@ const Signup = () => {
                 >
                   Sign Up
                 </button>
-                <div className="social">
-                  <div className="go"><FaGoogle className='mt-2 rounded' /> Google</div>
-                  <div className="fb"><FaFacebook className='mt-2'/> Facebook</div>
-                </div>
               </form>
             )}
 
