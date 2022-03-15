@@ -196,87 +196,86 @@ const Dashboard = () => {
         <>
           <div className='col-9 d-flex flex-row justify-content-between'>
             <div className='question'>
-              <div className='upper-container '>
-                <h1>Ignite
-                  <br />
-                  A Couples App
-                </h1>
-                <div className='container qotd my-4 col-10'>
-                  <h4 className='qotd-title'>Question of the Day</h4>
-                  <QuestionOfTheDay />
-                </div>
+              <div className='upper-container text-center'>
+                <h1>Hey, {Auth.getName().data.username} & {Auth.getName().data.username2}! </h1>
+                <h4 className='mt-0'> Welcome to your couples dashboard :) </h4>
+              </div>
 
-                <div className='row '>
-                  <div className="col-4 mx-5">
-                    <div className="image-container ">
-                      <img className="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
-                      <span className='upload-button'><FaCamera /></span>
-                      <input className="file-upload" type="file" accept="image/*" />
-                    </div>
-                    <div className='lower-container'>
+              <div className='container qotd my-4 col-10'>
+                <h4 className='qotd-title'>Question of the Day</h4>
+                <QuestionOfTheDay />
+              </div>
 
-                      <h3 className='h3'>{Auth.getName().data.username}</h3>
-
-                      <br />
-                      <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
-
-                      {/* Questionnaire Modal */}
-                      <button className='button mt-2' data-whichuser="1" onClick={openModal}>
-                        Discover Your Love Language!
-                      </button>
-                      <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
-                        <Modal.Header closeButton>
-                          <Modal.Title>Discover Your Love Language</Modal.Title>
-                        </Modal.Header>
-
-                        <Modal.Body>
-                          <Questionnaire
-                            loveLanguage={loveLanguage}
-                            showResult={showResult}
-                            selectedQuestion={selectedQuestion}
-                            nextQuestion={nextQuestion}
-                          />
-                        </Modal.Body>
-                      </Modal>
-                      <h3 className='h3'>{Auth.getName().data.username2}</h3>
-
-                      <br />
-                      <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
-
-
-
-
-
-
-                      {/* partner2 modal */}
-                      {/* Questionnaire Modal */}
-                      <button className='button mt-2' data-whichuser="2" onClick={openModal}>
-                        Discover Your Love Language!
-                      </button>
-                      <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
-                        <Modal.Header closeButton>
-                          <Modal.Title>Discover Your Love Language</Modal.Title>
-                        </Modal.Header>
-
-                        <Modal.Body>
-                          <Questionnaire
-                            loveLanguage={loveLanguage2}
-                            showResult={showResult}
-                            selectedQuestion={selectedQuestion}
-                            nextQuestion={nextQuestion}
-                          />
-                        </Modal.Body>
-                      </Modal>
-
-
-
-
-                    </div>
+              <div className='row '>
+                <div className="col-4 mx-5">
+                  <div className="image-container ">
+                    <img className="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
+                    <span className='upload-button'><FaCamera /></span>
+                    <input className="file-upload" type="file" accept="image/*" />
                   </div>
-                  <div className='col-6'>
-                    <div className="row">
-                      <Goals />
-                    </div>
+                  <div className='lower-container'>
+
+                    <h3 className='h3'>{Auth.getName().data.username}</h3>
+
+                    <br />
+                    <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
+
+                    {/* Questionnaire Modal */}
+                    <button className='button mt-2' data-whichuser="1" onClick={openModal}>
+                      Discover Your Love Language!
+                    </button>
+                    <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
+                      <Modal.Header closeButton>
+                        <Modal.Title>Discover Your Love Language</Modal.Title>
+                      </Modal.Header>
+
+                      <Modal.Body>
+                        <Questionnaire
+                          loveLanguage={loveLanguage}
+                          showResult={showResult}
+                          selectedQuestion={selectedQuestion}
+                          nextQuestion={nextQuestion}
+                        />
+                      </Modal.Body>
+                    </Modal>
+                    <h3 className='h3'>{Auth.getName().data.username2}</h3>
+
+                    <br />
+                    <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
+
+
+
+
+
+
+                    {/* partner2 modal */}
+                    {/* Questionnaire Modal */}
+                    <button className='button mt-2' data-whichuser="2" onClick={openModal}>
+                      Discover Your Love Language!
+                    </button>
+                    <Modal show={showContent} onHide={closeModal} className="modal-bg">
+                      <Modal.Header className="modal-header" closeButton>
+                        <Modal.Title>Discover Your Love Language</Modal.Title>
+                      </Modal.Header>
+
+                      <Modal.Body>
+                        <Questionnaire
+                          loveLanguage={loveLanguage2}
+                          showResult={showResult}
+                          selectedQuestion={selectedQuestion}
+                          nextQuestion={nextQuestion}
+                        />
+                      </Modal.Body>
+                    </Modal>
+
+
+
+
+                  </div>
+                </div>
+                <div className='col-6'>
+                  <div className="row">
+                    <Goals />
                   </div>
                 </div>
               </div>
@@ -286,7 +285,8 @@ const Dashboard = () => {
       ) : (
         <>
         </>
-      )}
+      )
+      }
     </>
   );
 };
