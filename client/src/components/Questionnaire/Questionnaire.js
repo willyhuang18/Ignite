@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import $ from 'jquery'
 import './Questionnaire.css'
+// import { useMutation } from '@apollo/client';
+// import { ADD_LOVE_LANGUAGE } from '../../utils/mutations';
+// import AuthService from '../../utils/auth'
 
 
-let physicalTouch = 0;
-let qualityTime = 0;
-let actsOfService = 0;
-let wordsOfAffirmation = 0;
-let gifts = 0;
 
-export default function Questionnaire() {
-    const [selectedQuestion, setSelectedQuestion] = useState(0);
-    const [showResult, setShowResult] = useState(false);
-    const [loveLanguage, setLoveLanguage] = useState('')
+export default function Questionnaire({loveLanguage, showResult, selectedQuestion, nextQuestion}) {
+    // const [selectedQuestion, setSelectedQuestion] = useState(0);
+    // const [showResult, setShowResult] = useState(false);
+    // const [loveLanguage, setLoveLanguage] = useState('')
+
+    // const [addUserLoveLanguage, { error }] = useMutation(ADD_LOVE_LANGUAGE)
 
 
     const questions = [
@@ -75,69 +74,78 @@ export default function Questionnaire() {
     ]
 
     // this function will add 1 to designated love language each time the answer corresponding with that love language is clicked.   
-    function nextQuestion(index) {
-        console.log("index is " + index)
+    // function nextQuestion(index) {
+    //     console.log("index is " + index)
 
-        if (index === 1) {
-            physicalTouch += 1
-        }
-        else if (index === 2) {
-            qualityTime += 1
-        }
-        else if (index === 3) {
-            actsOfService += 1
-        }
-        else if (index === 4) {
-            wordsOfAffirmation += 1
-        }
-        else {
-            gifts += 1
-        }
+    //     if (index === 1) {
+    //         physicalTouch += 1
+    //     }
+    //     else if (index === 2) {
+    //         qualityTime += 1
+    //     }
+    //     else if (index === 3) {
+    //         actsOfService += 1
+    //     }
+    //     else if (index === 4) {
+    //         wordsOfAffirmation += 1
+    //     }
+    //     else {
+    //         gifts += 1
+    //     }
 
-        console.log('physical touch equals');
-        console.log(physicalTouch)
+        // console.log('physical touch equals');
+        // console.log(physicalTouch)
 
-        console.log('quality time equals');
-        console.log(qualityTime)
+        // console.log('quality time equals');
+        // console.log(qualityTime)
 
-        console.log('acts of service equals');
-        console.log(actsOfService)
+        // console.log('acts of service equals');
+        // console.log(actsOfService)
 
-        console.log('words equals');
-        console.log(wordsOfAffirmation)
+        // console.log('words equals');
+        // console.log(wordsOfAffirmation)
 
-        console.log('gifts equals');
-        console.log(gifts)
+        // console.log('gifts equals');
+        // console.log(gifts)
 
         // this will display the next question in the questions array
-        const nextQuestion = selectedQuestion + 1;
-        if (nextQuestion < questions.length) {
-            setSelectedQuestion(nextQuestion);
-        } else {
-            setShowResult(true)
-            displayLoveLanguage()
-        }
-    }
+    //     const nextQuestion = selectedQuestion + 1;
+    //     if (nextQuestion < questions.length) {
+    //         setSelectedQuestion(nextQuestion);
+    //     } else {
+    //         setShowResult(true)
+    //         displayLoveLanguage()
+    //     }
+    // }
 
 
-    function displayLoveLanguage() {
-        if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
-            setLoveLanguage('Physical Touch')
-            console.log('physicaaaaal');
-        } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
-            setLoveLanguage('Quality Time')
-            console.log('quaaaality');
-        } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
-            setLoveLanguage('Acts of Service')
-            console.log('serviceeeeeee');
-        } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
-            setLoveLanguage('Words of Affirmation')
-            console.log('wordssssss'); 
-        } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
-            setLoveLanguage('Gifts')
-            console.log('giftsssss');
-        }
-    }
+    // function displayLoveLanguage() {
+    //     if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
+    //         setLoveLanguage('Physical Touch')
+    //         console.log('physicaaaaal');
+    //     } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
+    //         setLoveLanguage('Quality Time')
+    //         console.log('quaaaality');
+    //     } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
+    //         setLoveLanguage('Acts of Service')
+    //         console.log('serviceeeeeee');
+    //     } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
+    //         setLoveLanguage('Words of Affirmation')
+    //         console.log('wordssssss');
+    //     } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
+    //         setLoveLanguage('Gifts')
+    //         console.log('giftsssss');
+    //     }
+
+    // }
+
+    // async function saveLoveLanguage() {
+    //     const usersInformation = AuthService.getName()
+    //     const { data } = await addUserLoveLanguage({
+    //         variables: { username: username, loveLanguage1: loveLanguage1, loveLanguage2: loveLanguage2 }
+    //     })
+    // }
+
     return (
         <div>
             {showResult ? (

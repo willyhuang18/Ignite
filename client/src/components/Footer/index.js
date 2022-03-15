@@ -8,7 +8,7 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className=" footer mt-auto ">
+    <footer className=" footer mt-5 ">
       <div className="container text-center mb-5 header">
         {location.pathname !== '/' && (
           <div className='d-inline-block'>
@@ -24,9 +24,6 @@ const Footer = () => {
           </h1>
         </div>
         <div class="container">
-          <FaFacebookSquare className='m-2 fs-3' />
-          <FaGithub className='m-2 fs-3' />
-          <FaTwitter className='m-2 fs-3'/>
           <p>© Copyright 2022 Ignite</p>
         </div>
       </div>
