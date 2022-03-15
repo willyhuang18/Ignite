@@ -13,6 +13,9 @@ const Counter=()=>{
     
       let decrementCount = () => {
         setCount(count - 1);
+        if (count === 0 ){
+          setCount(0)
+        }
         // localStorage.setItem("count", count);
       };
 
@@ -26,9 +29,9 @@ const Counter=()=>{
     return(
         <>
             <div className="row">
-            <Button className="col-3" title={"-"} action={decrementCount} />    
-            <h1 className="col-6">{count}</h1>
-            <Button className="col-3" title={"+"} action={incrementCount} />
+            <Button className="col-4" title={"-"} action={decrementCount}/>    
+            <h1 className="col-4">{count}</h1>
+            <Button className="col-4" title={"+"} action={incrementCount} />
             </div>
             {/* <div className="row">
             <Button title={"-"} action={decrementCount} />
