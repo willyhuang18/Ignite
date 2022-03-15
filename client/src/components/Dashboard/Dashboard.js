@@ -3,6 +3,7 @@ import Auth from '../../utils/auth';
 import { Modal, Button } from 'react-bootstrap';
 import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
+import Questionnaire2 from '../Questionnaire/Questionnaire2.js'
 import QuestionOfTheDay from '../QuestionOfTheDay/QuestionOfTheDay';
 import './Dashboard.css'
 import Goals from '../Goals/Goals';
@@ -112,12 +113,16 @@ const Dashboard = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [loveLanguage, setLoveLanguage] = useState('')
-  const [loveLanguage2, setLoveLanguage2] = useState('')
+  // const [loveLanguage2, setLoveLanguage2] = useState('')
+  const [showContent2, setShowContent2] = useState(false);
+
 
 
   // this will open the modal upon click
-  const openModal = () => {
-    setShowContent(true)
+  const openModal = (partner) => {
+    if (partner === 1) {
+      setShowContent(true)
+    } else { setShowContent2(true) }
   }
 
   // const openModal = () => {
@@ -133,7 +138,9 @@ const Dashboard = () => {
   // this will close the modal upon click
   const closeModal = () => {
     setShowContent(false)
+    setShowContent2(false)
   }
+
 
   function nextQuestion(index) {
     // console.log("index is " + index)
@@ -222,7 +229,7 @@ const Dashboard = () => {
                     <h3 className='h3'>{Auth.getName().data.username}</h3>
                     <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
                     {/* Partner 1's Questionnaire Modal */}
-                    <button className='button mt-2' data-whichuser="1" onClick={openModal}>
+                    <button className='button mt-2' data-whichuser="1" onClick={() => openModal(1)}>
                       Discover Your Love Language!
                     </button>
                     <Modal show={showContent} onHide={closeModal} className="bg-light modal-questions">
@@ -245,23 +252,21 @@ const Dashboard = () => {
                     <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
                     <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
                     {/* Partner 2's Questionnaire Modal */}
-                    <button className='button mt-2' data-whichuser="2" onClick={openModal}>
+                    <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
                       Discover Your Love Language!
                     </button>
-                    <Modal show={showContent} onHide={closeModal} className="modal-bg">
+                    <Modal show={showContent2} onHide={closeModal} className="modal-bg">
+                      <Questionnaire2 />
+                      {/* <Modal show={showContent} onHide={closeModal} className="modal-bg">
                       <Modal.Header className="modal-header" closeButton>
                         <Modal.Title>Discover Your Love Language</Modal.Title>
                       </Modal.Header>
 
                       <Modal.Body>
-                        <Questionnaire
-                          loveLanguage={loveLanguage}
-                          showResult={showResult}
-                          selectedQuestion={selectedQuestion}
-                          nextQuestion={nextQuestion}
+                        <Questionnaire2
                         />
                       </Modal.Body>
-
+*/}
                     </Modal>
                   </div>
                 </div>
