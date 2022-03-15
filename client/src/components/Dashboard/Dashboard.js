@@ -117,7 +117,7 @@ const Dashboard = () => {
 
   // this will open the modal upon click
   const openModal = () => {
-      setShowContent(true)
+    setShowContent(true)
   }
 
   // const openModal = () => {
@@ -136,7 +136,7 @@ const Dashboard = () => {
   }
 
   function nextQuestion(index) {
-    console.log("index is " + index)
+    // console.log("index is " + index)
 
     if (index === 1) {
       physicalTouch += 1
@@ -165,6 +165,7 @@ const Dashboard = () => {
   }
 
   function displayLoveLanguage() {
+
     if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
       setLoveLanguage('Physical Touch')
       // setLoveLanguage2('Physical Touch') 
@@ -195,7 +196,7 @@ const Dashboard = () => {
     <>
       {Auth.loggedIn() ? (
         <>
-          <div className='col-9 d-flex flex-row justify-content-between'>
+          <div className='col-lg-9 col-md-12 d-flex flex-row justify-content-between'>
             <div className='question'>
               <div className='upper-container text-center'>
                 <h1>Hey, {Auth.getName().data.username} & {Auth.getName().data.username2}! </h1>
@@ -207,21 +208,20 @@ const Dashboard = () => {
                 <QuestionOfTheDay />
               </div>
 
-              <div className='row '>
+              <div className='row my-4'>
                 <div className="col-4 mx-5">
-                  <div className="image-container ">
+                  <div className="image-container col-12">
                     <img className="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt='' />
-                    <span className='upload-button'><FaCamera /></span>
+                    <span className='upload-button'> <FaCamera /> </span>
                     <input className="file-upload" type="file" accept="image/*" />
                   </div>
+
+
                   <div className='lower-container'>
-
+                    {/* Partner 1 */}
                     <h3 className='h3'>{Auth.getName().data.username}</h3>
-
-                    <br />
                     <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
-
-                    {/* Questionnaire Modal */}
+                    {/* Partner 1's Questionnaire Modal */}
                     <button className='button mt-2' data-whichuser="1" onClick={openModal}>
                       Discover Your Love Language!
                     </button>
@@ -238,18 +238,13 @@ const Dashboard = () => {
                           nextQuestion={nextQuestion}
                         />
                       </Modal.Body>
+
                     </Modal>
-                    <h3 className='h3'>{Auth.getName().data.username2}</h3>
 
-                    <br />
+                    {/* Partner 2 */}
+                    <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
                     <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
-
-
-
-
-
-                    {/* partner2 modal */}
-                    {/* Questionnaire Modal */}
+                    {/* Partner 2's Questionnaire Modal */}
                     <button className='button mt-2' data-whichuser="2" onClick={openModal}>
                       Discover Your Love Language!
                     </button>
@@ -260,24 +255,24 @@ const Dashboard = () => {
 
                       <Modal.Body>
                         <Questionnaire
-                          loveLanguage={loveLanguage2}
+                          loveLanguage={loveLanguage}
                           showResult={showResult}
                           selectedQuestion={selectedQuestion}
                           nextQuestion={nextQuestion}
                         />
                       </Modal.Body>
+
                     </Modal>
-
-
-
-
                   </div>
                 </div>
+
+                {/* Goals For Partner List */}
                 <div className='col-6'>
                   <div className="row">
                     <Goals />
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

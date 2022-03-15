@@ -25,7 +25,7 @@ const Counter=()=>{
       // }, []);
     
       
-      console.log(localStorage.getItem("count"));
+      // console.log(localStorage.getItem("count"));
     return(
         <>
             <div className="row d-felx justify-content-center">
