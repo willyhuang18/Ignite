@@ -12,6 +12,7 @@ html,body{
    }
   
   .heart {
+    z-index: -1;
       position: absolute;
       top: -50%;
       -webkit-transform: rotate(-45deg);
