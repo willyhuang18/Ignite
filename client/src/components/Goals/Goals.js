@@ -23,7 +23,7 @@ const Goals = () => {
   );
   return (
     <div>
-      <div className="row">
+      <div className="row d-flex align-contents-center ">
       <h3 className='h3'>{Auth.getName().data.username} 's list </h3>
         <div style={style} className="">
           <List user={user1goals} />
@@ -42,10 +42,11 @@ const Goals = () => {
 
 const style = {
   backgroundImage:
-    "radial-gradient(circle, #e07373, #ea908c, #f3ada6, #fac9c3, #ffe5e1)",
+    "linear-gradient(to bottom, #e07373, #ea908c, #f3ada6, #fac9c3, #ffe5e1)",
   width: "500px",
   height: "280px",
   overflow: "scroll",
+   borderRadius:"25px",
   borderStyle: "solid",
   borderWidth: "4px",
 };
