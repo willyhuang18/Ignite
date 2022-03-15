@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 import './Questionnaire.css'
 // import { useMutation } from '@apollo/client';
 // import { ADD_LOVE_LANGUAGE } from '../../utils/mutations';
@@ -150,7 +151,7 @@ export default function Questionnaire({loveLanguage, showResult, selectedQuestio
         <div>
             {showResult ? (
                 <div>
-                    <h3> Your Love Language is {loveLanguage}
+                    <h3> Your Love Language is {loveLanguage} 
                     </h3>
                 </div>
             ) : (
@@ -166,7 +167,6 @@ export default function Questionnaire({loveLanguage, showResult, selectedQuestio
                         if (index === selectedQuestion) {
                             return (
                                 <div class="allAnswers">
-                                    {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
                                     <button onClick={() => nextQuestion(1)} type="radio" className="my-3 option1">
                                         <p>
                                             {question.physicalTouchAnswer}

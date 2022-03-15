@@ -143,10 +143,10 @@ export default function QuestionOfTheDay() {
     ]
 
     const randomNum = Math.floor(Math.random() * questions.length);
-    console.log('randomNum: ', randomNum);
+    // console.log('randomNum: ', randomNum);
   
     const randomQuestion = questions[randomNum].question;
-    console.log('randomQuestion: ', randomQuestion);
+    // console.log('randomQuestion: ', randomQuestion);
 
     return (
         <>
