@@ -202,7 +202,7 @@ const Dashboard = () => {
                 <h4 className='mt-0'> Welcome to your couples dashboard :) </h4>
               </div>
 
-              <div className='container qotd my-4 col-10'>
+              <div className='container qotd my-4 col-10 hvr-pop'>
                 <h4 className='qotd-title'>Question of the Day</h4>
                 <QuestionOfTheDay />
               </div>
