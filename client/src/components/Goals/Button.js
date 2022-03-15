@@ -7,8 +7,8 @@ export default function Button(props) {
   const style = {
     "width": "2rem",
     "height": "2rem",
-    "borderRadius": "50%",
+    "background": "none",
     "border": "none",
-    "margin": "10px 0 0 0",
-    "fontSize": "1em",
+    "padding": "0 0 50px",
+    "fontSize": "30px",
   }
