@@ -1,23 +1,26 @@
 # Ignite
 
+## Description
+Maintaining a strong and healthy relationship can be a challenge when life gets busy, and as we grow and change as individuals. We created Ignite to help couples connect, communicate, and find new ways to make one another feel loved. <br />
+
+Users will have access to a 'Question of the Day' that will spark conversation and allow for a deeper understanding of one another. Each partner will complete a questionnaire that will determine the primary way in which they feel loved. Once complete, a list will be displayed with ways for each partner to make the other feel more loved, based on their individual love language. 
+
+
 ## Table of Contents
 * [Description](#description)
 * [Demo and Site Link](#demo)
 * [Installation](#installation)
 * [Technology Stack](#technology-stack)
 * [Code Snippets](#code-snippets)
-* [Learning Points](#learning-points)
 * [Authors](#authors)
 * [License](#license)
-
-## Description
-Healthy romantic relationships require consistent effort and dedication. As we often find - maintaining a strong relationship can be a challenge when life gets busy, and as we grow and change as individuals. We created Ignite to help couples connect, communicate, and find new ways to make one another feel loved. <br />
-Our application allows couples to have a shared account where they have access to a dashboard with a several great features. Couples will have access to a 'Question of the Day' that will spark conversations and allow for a deeper understanding of one another. Each partner will also complete a questionnaire that will determine the primary way in which they feel loved. Additionally, each partner will have access to a list that will give them suggestions on how to make their partner feel most loved, based on the results of their questionnaire. 
-
 
 ## Demo and Site Link
 * [Ignite - Live Site](https://rocky-eyrie-31918.herokuapp.com/)
 * [Ignite - Repo](https://github.com/lesliejpatino/Ignite)
+
+![Deployed Site](client/public/dashboard-after.png)
+![Site Gif](client/public/appdemo.gif)
 
 
 ## Installation
@@ -27,23 +30,26 @@ To run this application, there are many packages that must be installed. Once yo
 npm install
 ```
 
-Once all dependencies are installed, you can run the following script to view the application:
+Once all dependencies are installed, view the application by running:
 ```
 npm run develop 
 ```
 
 ## Technology Stack
+Front End Technologies
 * React
-* JSX
 * Bootstrap
-* Node js
 * CSS
 * HTML 
+<br />
+<br />
 
+Back End Technologies
+* Node js
+* Express
+* Mongoose
+* MongoDB (Database Management) 
 
-## Code Snippets
-
-## Learning Points
 
 ## Authors
 **[Pangta Huang]()**
