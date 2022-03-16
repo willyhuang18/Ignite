@@ -76,8 +76,8 @@ const questions = [
 ]
 
 
+// profile photo uploader
 $(document).ready(function () {
-
 
   var readURL = function (input) {
     if (input.files && input.files[0]) {
@@ -108,6 +108,7 @@ $(document).ready(function () {
     }
   })
 });
+
 const Dashboard = () => {
   const [showContent, setShowContent] = useState(false)
   const [selectedQuestion, setSelectedQuestion] = useState(0);
@@ -132,9 +133,8 @@ const Dashboard = () => {
   }
 
 
+  // this function moves onto the next question when the user selects an answer
   function nextQuestion(index) {
-    // console.log("index is " + index)
-
     if (index === 1) {
       physicalTouch += 1
     }
@@ -151,40 +151,28 @@ const Dashboard = () => {
       gifts += 1
     }
 
+    // If there are no more questions, display the result
     const nextQuestion = selectedQuestion + 1;
     if (nextQuestion < questions.length) {
       setSelectedQuestion(nextQuestion);
     } else {
       setShowResult(true)
       displayLoveLanguage()
-      // setLoveLanguage2(displayLoveLanguage())
     }
   }
 
+  // This function will take the category that had the most selections on the questionnaire and assign it as the users primary love language
   function displayLoveLanguage() {
-
     if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
       setLoveLanguage('Physical Touch')
-      // setLoveLanguage2('Physical Touch') 
-      console.log('physicaaaaal');
     } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
       setLoveLanguage('Quality Time')
-      // setLoveLanguage2('Quality Time') 
-      console.log('quaaaality');
     } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
       setLoveLanguage('Acts of Service')
-      // setLoveLanguage2('Acts of Service') 
-      console.log('serviceeeeeee');
     } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
       setLoveLanguage('Words of Affirmation')
-      // setLoveLanguage2('Words of Affirmation') 
-
-      console.log('wordssssss');
     } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
       setLoveLanguage('Gifts')
-      // setLoveLanguage2('Gifts') 
-
-      console.log('giftsssss');
     }
 
   }
@@ -193,6 +181,7 @@ const Dashboard = () => {
     <>
       {Auth.loggedIn() ? (
         <>
+          {/* Header */}
           <div className='col-lg-9 col-md-12 d-flex flex-row justify-content-between'>
             <div className='question'>
               <div className='upper-container text-center'>
@@ -205,6 +194,7 @@ const Dashboard = () => {
                 <QuestionOfTheDay />
               </div>
 
+              {/* Profile Photo */}
               <div className='row my-4'>
                 <div className="col-4 mx-5">
                   <div className="image-container col-12">
@@ -213,8 +203,8 @@ const Dashboard = () => {
                     <input className="file-upload" type="file" accept="image/*" />
                   </div>
 
-
                   <div className='lower-container'>
+                    
                     {/* Partner 1 */}
                     <h3 className='h3'>{Auth.getName().data.username}</h3>
                     <button className='button'>{Auth.getName().data.username} 's Love Language: {loveLanguage} <br /> </button>
@@ -239,22 +229,22 @@ const Dashboard = () => {
                     </Modal>
 
                     {/* Partner 2 */}
-                      <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
-                      <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguage2} <br /> </button>
-                      {/* Partner 2's Questionnaire Modal */}
-                      <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
-                        Discover Your Love Language!
-                      </button>
-                      <Modal show={showContent2} onHide={closeModal} className="bg-light modal-questions">
+                    <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
+                    <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguage2} <br /> </button>
+                    {/* Partner 2's Questionnaire Modal */}
+                    <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
+                      Discover Your Love Language!
+                    </button>
+                    <Modal show={showContent2} onHide={closeModal} className="bg-light modal-questions">
                       <Modal.Header closeButton>
-                          <Modal.Title>Discover Your Love Language</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                        <Questionnaire2 
+                        <Modal.Title>Discover Your Love Language</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Questionnaire2
                           setLoveFun={setLoveLanguage2}
                         />
-                        </Modal.Body>
-                      
+                      </Modal.Body>
+
                     </Modal>
                   </div>
                 </div>
@@ -262,7 +252,7 @@ const Dashboard = () => {
                 {/* Goals For Partner List */}
                 <div className='col-6'>
                   <div className="row">
-                    <Goals user1={loveLanguage} user2={loveLanguage2}/>
+                    <Goals user1={loveLanguage} user2={loveLanguage2} />
                   </div>
                 </div>
 
