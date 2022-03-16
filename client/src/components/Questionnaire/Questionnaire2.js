@@ -1,15 +1,12 @@
-
 import React, { useState } from 'react';
 import './Questionnaire.css'
 
-const  Questionnaire2 = ({ setLoveFun }) => {
-
-    
+const Questionnaire2 = ({ setLoveFun }) => {
     const [loveLanguage, setLoveLanguage] = useState('')
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
     setLoveFun(loveLanguage)
-    
+
 
     const questions = [
         {
@@ -77,6 +74,7 @@ const  Questionnaire2 = ({ setLoveFun }) => {
     let gifts = 0;
 
 
+    // this will display the next question in the questionnaire
     const handleClick = (index) => {
         setCurrentQuestion(currentQuestion + 1)
 
@@ -104,29 +102,16 @@ const  Questionnaire2 = ({ setLoveFun }) => {
     const getLoveLanguage = () => {
         if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
             setLoveLanguage('Physical Touch')
-
-            console.log('physicaaaaal');
         } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
             setLoveLanguage('Quality Time');
-
-            // setLoveLanguage2('Quality Time') 
-            console.log('quaaaality');
         } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
             setLoveLanguage('Acts of Service');
-            // setLoveLanguage2('Acts of Service') 
-            console.log('serviceeeeeee');
         } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
             setLoveLanguage('Words of Affirmation');
-            // setLoveLanguage2('Words of Affirmation') 
-
-            console.log('wordssssss');
         } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
             setLoveLanguage('Gifts');
         }
-
-        //console.log(setLoveFun)
         setLoveFun(loveLanguage)
-        
     }
 
     return (
@@ -145,7 +130,6 @@ const  Questionnaire2 = ({ setLoveFun }) => {
                     </div>
                     <br />
                     <div class="allAnswers">
-                        {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
                         <button onClick={() => handleClick(1)} type="radio" className="my-3 option1">
                             <p>
                                 {questions[currentQuestion].physicalTouchAnswer}
@@ -176,10 +160,6 @@ const  Questionnaire2 = ({ setLoveFun }) => {
                             </p>
                         </button>
                     </div>
-
-
-
-
                 </div>
             )}
         </div>

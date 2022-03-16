@@ -1,4 +1,3 @@
-// import {useState, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import Counter from "./Counter";
 const List = ({user, onSave}) => {

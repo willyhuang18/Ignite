@@ -8,7 +8,6 @@ const Counter=()=>{
 
     let incrementCount = () => {
         setCount(count + 1);
-        // localStorage.setItem("count", count);
       };
     
       let decrementCount = () => {
@@ -16,16 +15,8 @@ const Counter=()=>{
         if (count === 0 ){
           setCount(0)
         }
-        // localStorage.setItem("count", count);
       };
 
-      // useEffect(() => {
-      //   const initialValue = localStorage.getItem("count");
-      //   if (initialValue) setCount(initialValue);
-      // }, []);
-    
-      
-      // console.log(localStorage.getItem("count"));
     return(
         <>
             <div className="row d-felx justify-content-center">
@@ -33,11 +24,6 @@ const Counter=()=>{
             <h1 className="col-6 d-felx pl-4">{count}</h1>
             <Button className="col-3" title={<FaPlusCircle/>} action={incrementCount} />
             </div>
-            {/* <div className="row">
-            <Button title={"-"} action={decrementCount} />
-            <Button title={"+"} action={incrementCount} />
-            </div> */}
-             
         </>
     );
 }

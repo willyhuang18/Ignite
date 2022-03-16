@@ -3,6 +3,8 @@ import List from "./List";
 import { useQuery} from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
 import Auth from '../../utils/auth';
+
+
 const Goals = ({user1, user2}) => {
   const { data } = useQuery(Get_GoalsForPartner);
   const [user1Data, setuser1] = useState([]);
@@ -63,4 +65,4 @@ const noLove= {
 export default Goals;
 // user state for user 1 & user 2
 // user setters inside
-// passdown as props
+// pass down as props
