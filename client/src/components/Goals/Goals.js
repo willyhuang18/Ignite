@@ -3,7 +3,7 @@ import List from "./List";
 import { useQuery} from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
 import Auth from '../../utils/auth';
-const Goals = () => {
+const Goals = ({user1}) => {
   const { data } = useQuery(Get_GoalsForPartner);
   const [user1Data, setuser1] = useState([]);
   const [user2Data, setuser2] = useState([]);
@@ -16,7 +16,8 @@ const Goals = () => {
   }, [data]);
 
   const user1goals = user1Data.filter(
-    (goal) => goal.loveFilter === "Acts of Service"
+    (goal) => goal.loveFilter === user1,
+    console.log("love", user1)
   );
   const user2goals = user2Data.filter(
     (goal) => goal.loveFilter === "Gift Giving"
