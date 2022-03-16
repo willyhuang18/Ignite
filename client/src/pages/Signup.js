@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './login.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Auth from '../utils/auth';
 
 const Signup = () => {
