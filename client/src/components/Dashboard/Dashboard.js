@@ -113,7 +113,7 @@ const Dashboard = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [loveLanguage, setLoveLanguage] = useState('')
-  // const [loveLanguage2, setLoveLanguage2] = useState('')
+  const [loveLanguage2, setLoveLanguage2] = useState('')
   const [showContent2, setShowContent2] = useState(false);
 
 
@@ -249,24 +249,22 @@ const Dashboard = () => {
                     </Modal>
 
                     {/* Partner 2 */}
-                    <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
-                    <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
-                    {/* Partner 2's Questionnaire Modal */}
-                    <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
-                      Discover Your Love Language!
-                    </button>
-                    <Modal show={showContent2} onHide={closeModal} className="modal-bg">
-                      <Questionnaire2 />
-                      {/* <Modal show={showContent} onHide={closeModal} className="modal-bg">
-                      <Modal.Header className="modal-header" closeButton>
-                        <Modal.Title>Discover Your Love Language</Modal.Title>
-                      </Modal.Header>
-
-                      <Modal.Body>
-                        <Questionnaire2
+                      <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
+                      <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguage2} <br /> </button>
+                      {/* Partner 2's Questionnaire Modal */}
+                      <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
+                        Discover Your Love Language!
+                      </button>
+                      <Modal show={showContent2} onHide={closeModal} className="bg-light modal-questions">
+                      <Modal.Header closeButton>
+                          <Modal.Title>Discover Your Love Language</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                        <Questionnaire2 
+                          setLoveFun={setLoveLanguage2}
                         />
-                      </Modal.Body>
-*/}
+                        </Modal.Body>
+                      
                     </Modal>
                   </div>
                 </div>
