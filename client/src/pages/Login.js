@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import './login.css';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Auth from '../utils/auth';
 
 

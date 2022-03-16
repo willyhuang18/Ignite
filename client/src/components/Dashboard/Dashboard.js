@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Auth from '../../utils/auth';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { FaCamera } from "react-icons/fa";
 import Questionnaire from '../Questionnaire/Questionnaire.js'
 import Questionnaire2 from '../Questionnaire/Questionnaire2.js'
@@ -124,16 +124,6 @@ const Dashboard = () => {
       setShowContent(true)
     } else { setShowContent2(true) }
   }
-
-  // const openModal = () => {
-  //   if (Auth.getName().data.username) {
-  //     setShowContent(true)
-  //   }
-  //   if (Auth.getName().data.username2) {
-  //     setShowContent(true)
-  //   }
-  // }
-
 
   // this will close the modal upon click
   const closeModal = () => {

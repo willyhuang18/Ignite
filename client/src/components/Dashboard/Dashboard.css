@@ -86,7 +86,8 @@ img{
 .upload-button {
   font-size: 1.2em;
   position:relative; 
-  top: 80px; left:-50px;
+  top: -36px; 
+  left: 160px;
 }
 
 .upload-button:hover {
