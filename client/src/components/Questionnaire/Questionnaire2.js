@@ -1,29 +1,15 @@
-// import React from 'react';
+
 import React, { useState } from 'react';
 import './Questionnaire.css'
-import { Modal } from 'react-bootstrap';
-import Auth from '../../utils/auth';
 
+const  Questionnaire2 = ({ setLoveFun }) => {
 
-// import AuthService from '../../utils/auth'
-let physicalTouch2 = 0;
-let qualityTime2 = 0;
-let actsOfService2 = 0;
-let wordsOfAffirmation2 = 0;
-let gifts2 = 0;
+    
+    const [loveLanguage, setLoveLanguage] = useState('')
 
-
-export default function Questionnaire2() {
-    const [selectedQuestion2, setSelectedQuestion2] = useState(0);
-    const [showResult2, setShowResult2] = useState(false);
-    const [loveLanguage2, setLoveLanguage2] = useState('');
-    // const [showContent2, setShowContent2] = useState(false);
-
-
-
-
-    // const [addUserLoveLanguage, { error }] = useMutation(ADD_LOVE_LANGUAGE)
-
+    const [currentQuestion, setCurrentQuestion] = useState(0)
+    setLoveFun(loveLanguage)
+    
 
     const questions = [
         {
@@ -84,162 +70,120 @@ export default function Questionnaire2() {
         }
     ]
 
-    // const openModal = () => {
-    //     setShowContent2(true)
-    //   }
-
-    //   const closeModal = () => {
-    //     setShowContent2(false)
-    //   }
+    let physicalTouch = 0;
+    let qualityTime = 0;
+    let actsOfService = 0;
+    let wordsOfAffirmation = 0;
+    let gifts = 0;
 
 
-    // this function will add 1 to designated love language each time the answer corresponding with that love language is clicked.   
-    function nextQuestion2(index) {
-        console.log("index is " + index)
+    const handleClick = (index) => {
+        setCurrentQuestion(currentQuestion + 1)
 
         if (index === 1) {
-            physicalTouch2 += 1
-            console.log('is this running?!?!?!?!');
+            physicalTouch += 1
         }
         else if (index === 2) {
-            qualityTime2 += 1
+            qualityTime += 1
         }
         else if (index === 3) {
-            actsOfService2 += 1
+            actsOfService += 1
         }
         else if (index === 4) {
-            wordsOfAffirmation2 += 1
+            wordsOfAffirmation += 1
         }
         else {
-            gifts2 += 1
+            gifts += 1
         }
 
-        console.log('physical touch equals');
-        // console.log(physicalTouch);
-        console.log(physicalTouch2)
-
-        console.log('quality time equals');
-        console.log(qualityTime2)
-
-        console.log('acts of service equals');
-        console.log(actsOfService2)
-
-        console.log('words equals');
-        console.log(wordsOfAffirmation2)
-
-        console.log('gifts equals');
-        console.log(gifts2)
-
-        // this will display the next question in the questions array
-        const getNextQuestion = selectedQuestion2 + 1;
-        if (getNextQuestion < questions.length) {
-            setSelectedQuestion2(getNextQuestion);
-        } else {
-            setShowResult2(true)
-            displayLoveLanguage2()
+        if (currentQuestion === questions.length - 1) {
+            getLoveLanguage()
         }
     }
 
+    const getLoveLanguage = () => {
+        if (physicalTouch > qualityTime && physicalTouch > actsOfService && physicalTouch > wordsOfAffirmation && physicalTouch > gifts) {
+            setLoveLanguage('Physical Touch')
 
-    function displayLoveLanguage2() {
-        if (physicalTouch2 > qualityTime2 && physicalTouch2 > actsOfService2 && physicalTouch2 > wordsOfAffirmation2 && physicalTouch2 > gifts2) {
-            setLoveLanguage2('Physical Touch')
             console.log('physicaaaaal');
-        } else if (qualityTime2 > physicalTouch2 && qualityTime2 > actsOfService2 && qualityTime2 > wordsOfAffirmation2 && qualityTime2 > gifts2) {
-            setLoveLanguage2('Quality Time')
+        } else if (qualityTime > physicalTouch && qualityTime > actsOfService && qualityTime > wordsOfAffirmation && qualityTime > gifts) {
+            setLoveLanguage('Quality Time');
+
+            // setLoveLanguage2('Quality Time') 
             console.log('quaaaality');
-        } else if (actsOfService2 > physicalTouch2 && actsOfService2 > qualityTime2 && actsOfService2 > wordsOfAffirmation2 && actsOfService2 > gifts2) {
-            setLoveLanguage2('Acts of Service')
+        } else if (actsOfService > physicalTouch && actsOfService > qualityTime && actsOfService > wordsOfAffirmation && actsOfService > gifts) {
+            setLoveLanguage('Acts of Service');
+            // setLoveLanguage2('Acts of Service') 
             console.log('serviceeeeeee');
-        } else if (wordsOfAffirmation2 > physicalTouch2 && wordsOfAffirmation2 > qualityTime2 && wordsOfAffirmation2 > actsOfService2 && wordsOfAffirmation2 > gifts2) {
-            setLoveLanguage2('Words of Affirmation')
+        } else if (wordsOfAffirmation > physicalTouch && wordsOfAffirmation > qualityTime && wordsOfAffirmation > actsOfService && wordsOfAffirmation > gifts) {
+            setLoveLanguage('Words of Affirmation');
+            // setLoveLanguage2('Words of Affirmation') 
+
             console.log('wordssssss');
-        } else if (gifts2 > physicalTouch2 && gifts2 > qualityTime2 && gifts2 > actsOfService2 && gifts2 > wordsOfAffirmation2) {
-            setLoveLanguage2('Gifts')
-            console.log('giftsssss');
+        } else if (gifts > physicalTouch && gifts > qualityTime && gifts > actsOfService && gifts > wordsOfAffirmation) {
+            setLoveLanguage('Gifts');
         }
 
+        //console.log(setLoveFun)
+        setLoveFun(loveLanguage)
+        
     }
-
-    // async function saveLoveLanguage() {
-    //     const usersInformation = AuthService.getName()
-    //     const { data } = await addUserLoveLanguage({
-    //         variables: { username: username, loveLanguage1: loveLanguage1, loveLanguage2: loveLanguage2 }
-    //     })
-    // }
 
     return (
-        <>
-            {/* <Modal show={showContent2} onHide={closeModal} className="modal-bg"> */}
-            <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguage2} <br /> </button>
-
-            <Modal.Header className="modal-header" closeButton>
-                <Modal.Title>Discover Your Logi ve Language</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+        <div>
+            {currentQuestion === questions.length ? (
                 <div>
-                    {
-                        showResult2 ? (
-                            <div>
-                                <h3> Your Love Language is {loveLanguage2}
-                                </h3>
-                            </div >
-                        ) : (
-                            <div className="questionnaire">
-                                <div className="questionTitle text-center">
-                                    <strong>
-                                        It's MOST meaningful when my partner...
-                                    </strong>
-                                </div>
-                                <br />
-                                {/* QUESTIONNAIRE BEGINS */}
-                                {questions.map((question, index) => {
-                                    if (index === selectedQuestion2) {
-                                        return (
-                                            <div class="allAnswers">
-                                                <button onClick={() => nextQuestion2(1)} type="radio" className="my-3 option1">
-                                                    <p>
-                                                        {question.physicalTouchAnswer}
-                                                    </p>
-                                                </button>
+                    <h3> Your Love Language is {loveLanguage}
+                    </h3>
+                </div>
+            ) : (
+                <div className="questionnaire">
+                    <div className="questionTitle text-center">
+                        <strong>
+                            It's MOST meaningful when my partner...
+                        </strong>
+                    </div>
+                    <br />
+                    <div class="allAnswers">
+                        {/* <button type="button" onClick={() => setLoggedIn(!loggedIn)}> */}
+                        <button onClick={() => handleClick(1)} type="radio" className="my-3 option1">
+                            <p>
+                                {questions[currentQuestion].physicalTouchAnswer}
+                            </p>
+                        </button>
 
-                                                <button onClick={() => nextQuestion2(2)} type="radio" className="my-3 option2">
-                                                    <p>
-                                                        {question.qualityTimeAnswer}
-                                                    </p>
-                                                </button>
+                        <button onClick={() => handleClick(2)} type="radio" className="my-3 option2">
+                            <p>
+                                {questions[currentQuestion].qualityTimeAnswer}
+                            </p>
+                        </button>
 
-                                                <button onClick={() => nextQuestion2(3)} type="radio" name="my-3 option3">
-                                                    <p>
-                                                        {question.actsOfServiceAnswer}
-                                                    </p>
-                                                </button>
+                        <button onClick={() => handleClick(3)} type="radio" name="my-3 option3">
+                            <p>
+                                {questions[currentQuestion].actsOfServiceAnswer}
+                            </p>
+                        </button>
 
-                                                <button onClick={() => nextQuestion2(4)} type="radio" name="my-3 option4">
-                                                    <p>
-                                                        {question.wordsOfAffirmationAnswer}
-                                                    </p>
-                                                </button>
+                        <button onClick={() => handleClick(4)} type="radio" name="my-3 option4">
+                            <p>
+                                {questions[currentQuestion].wordsOfAffirmationAnswer}
+                            </p>
+                        </button>
 
-                                                <button onClick={() => nextQuestion2(5)} type="radio" name="my-3 option5">
-                                                    <p>
-                                                        {question.giftsAnswer}
-                                                    </p>
-                                                </button>
-                                            </div>
+                        <button onClick={() => handleClick(5)} type="radio" name="my-3 option5">
+                            <p>
+                                {questions[currentQuestion].giftsAnswer}
+                            </p>
+                        </button>
+                    </div>
 
 
-                                        )
-                                    }
-                                }
-                                )}
-                            </div>
-                        )}
-                </div >
-            </Modal.Body>
-            {/* </Modal> */}
-        </>
+
+
+                </div>
+            )}
+        </div>
     )
 }
 
-
+export default Questionnaire2;
