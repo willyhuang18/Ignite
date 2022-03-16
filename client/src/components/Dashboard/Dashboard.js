@@ -272,7 +272,7 @@ const Dashboard = () => {
                 {/* Goals For Partner List */}
                 <div className='col-6'>
                   <div className="row">
-                    <Goals />
+                    <Goals user1={loveLanguage} user2={loveLanguage2}/>
                   </div>
                 </div>
 

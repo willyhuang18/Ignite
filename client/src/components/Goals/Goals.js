@@ -3,7 +3,7 @@ import List from "./List";
 import { useQuery} from "@apollo/client";
 import { Get_GoalsForPartner } from "../../utils/queries";
 import Auth from '../../utils/auth';
-const Goals = ({user1}) => {
+const Goals = ({user1, user2}) => {
   const { data } = useQuery(Get_GoalsForPartner);
   const [user1Data, setuser1] = useState([]);
   const [user2Data, setuser2] = useState([]);
@@ -17,24 +17,24 @@ const Goals = ({user1}) => {
 
   const user1goals = user1Data.filter(
     (goal) => goal.loveFilter === user1,
-    console.log("love", user1)
   );
+
   const user2goals = user2Data.filter(
-    (goal) => goal.loveFilter === "Gift Giving"
+    (goal) => goal.loveFilter === user2,
   );
   return (
     <div>
-      <div className="row d-flex align-contents-center ">
-      <h3 className='h3'> Ways To Make {Auth.getName().data.username} Feel More Loved </h3>
+      <div className="row d-flex align-items-center justify-content-end">
+      <h3 className='h3 me-3'> Ways To Make {Auth.getName().data.username} Feel More Loved </h3>
         <div style={style} className="">
-          <List user={user1goals} />
+         { user1goals.length > 0 ? <List user={user1goals} /> : <p style={noLove}> Take the Love Language quiz first</p> }
         </div>
       </div>
 
-      <div className="row">
+      <div className="row align-items-center justify-content-end">
       <h3 className='h3'> Ways To Make {Auth.getName().data.username2} Feel More Loved </h3>
         <div style={style} className="">
-          <List user={user2goals} />
+        { user2goals.length > 0 ? <List user={user2goals} /> : <p style={noLove}> Take the Love Language quiz first</p> } 
         </div>
       </div>
     </div>
@@ -51,6 +51,14 @@ const style = {
   borderStyle: "solid",
   borderWidth: "4px",
 };
+
+const noLove= {
+  color: "white",
+  display:"flex",
+  justifyContent: "center",
+  margin: "6rem 0",
+  fontSize:" 30px"
+}
 
 export default Goals;
 // user state for user 1 & user 2
