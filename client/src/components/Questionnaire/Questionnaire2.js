@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './Questionnaire.css'
 import { Modal } from 'react-bootstrap';
+import Auth from '../../utils/auth';
+
 
 // import AuthService from '../../utils/auth'
 let physicalTouch2 = 0;
@@ -11,7 +13,7 @@ let wordsOfAffirmation2 = 0;
 let gifts2 = 0;
 
 
-export default function Questionnaire2(){
+export default function Questionnaire2() {
     const [selectedQuestion2, setSelectedQuestion2] = useState(0);
     const [showResult2, setShowResult2] = useState(false);
     const [loveLanguage2, setLoveLanguage2] = useState('');
@@ -169,72 +171,74 @@ export default function Questionnaire2(){
     return (
         <>
             {/* <Modal show={showContent2} onHide={closeModal} className="modal-bg"> */}
-                <Modal.Header className="modal-header" closeButton>
-                    <Modal.Title>Discover Your Love Language</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div>
-                        {
-                            showResult2 ? (
-                                <div>
-                                    <h3> Your Love Language is {loveLanguage2}
-                                    </h3>
-                                </div >
-                            ) : (
-                                <div className="questionnaire">
-                                    <div className="questionTitle text-center">
-                                        <strong>
-                                            It's MOST meaningful when my partner...
-                                        </strong>
-                                    </div>
-                                    <br />
-                                    {/* QUESTIONNAIRE BEGINS */}
-                                    {questions.map((question, index) => {
-                                        if (index === selectedQuestion2) {
-                                            return (
-                                                <div class="allAnswers">
-                                                    <button onClick={() => nextQuestion2(1)} type="radio" className="my-3 option1">
-                                                        <p>
-                                                            {question.physicalTouchAnswer}
-                                                        </p>
-                                                    </button>
+            <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguage2} <br /> </button>
 
-                                                    <button onClick={() => nextQuestion2(2)} type="radio" className="my-3 option2">
-                                                        <p>
-                                                            {question.qualityTimeAnswer}
-                                                        </p>
-                                                    </button>
-
-                                                    <button onClick={() => nextQuestion2(3)} type="radio" name="my-3 option3">
-                                                        <p>
-                                                            {question.actsOfServiceAnswer}
-                                                        </p>
-                                                    </button>
-
-                                                    <button onClick={() => nextQuestion2(4)} type="radio" name="my-3 option4">
-                                                        <p>
-                                                            {question.wordsOfAffirmationAnswer}
-                                                        </p>
-                                                    </button>
-
-                                                    <button onClick={() => nextQuestion2(5)} type="radio" name="my-3 option5">
-                                                        <p>
-                                                            {question.giftsAnswer}
-                                                        </p>
-                                                    </button>
-                                                </div>
-
-
-                                            )
-                                        }
-                                    }
-                                    )}
+            <Modal.Header className="modal-header" closeButton>
+                <Modal.Title>Discover Your Logi ve Language</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div>
+                    {
+                        showResult2 ? (
+                            <div>
+                                <h3> Your Love Language is {loveLanguage2}
+                                </h3>
+                            </div >
+                        ) : (
+                            <div className="questionnaire">
+                                <div className="questionTitle text-center">
+                                    <strong>
+                                        It's MOST meaningful when my partner...
+                                    </strong>
                                 </div>
-                            )}
-                        </div >
-                </Modal.Body>
+                                <br />
+                                {/* QUESTIONNAIRE BEGINS */}
+                                {questions.map((question, index) => {
+                                    if (index === selectedQuestion2) {
+                                        return (
+                                            <div class="allAnswers">
+                                                <button onClick={() => nextQuestion2(1)} type="radio" className="my-3 option1">
+                                                    <p>
+                                                        {question.physicalTouchAnswer}
+                                                    </p>
+                                                </button>
+
+                                                <button onClick={() => nextQuestion2(2)} type="radio" className="my-3 option2">
+                                                    <p>
+                                                        {question.qualityTimeAnswer}
+                                                    </p>
+                                                </button>
+
+                                                <button onClick={() => nextQuestion2(3)} type="radio" name="my-3 option3">
+                                                    <p>
+                                                        {question.actsOfServiceAnswer}
+                                                    </p>
+                                                </button>
+
+                                                <button onClick={() => nextQuestion2(4)} type="radio" name="my-3 option4">
+                                                    <p>
+                                                        {question.wordsOfAffirmationAnswer}
+                                                    </p>
+                                                </button>
+
+                                                <button onClick={() => nextQuestion2(5)} type="radio" name="my-3 option5">
+                                                    <p>
+                                                        {question.giftsAnswer}
+                                                    </p>
+                                                </button>
+                                            </div>
+
+
+                                        )
+                                    }
+                                }
+                                )}
+                            </div>
+                        )}
+                </div >
+            </Modal.Body>
             {/* </Modal> */}
-        </>   
+        </>
     )
 }
 

@@ -250,7 +250,7 @@ const Dashboard = () => {
 
                     {/* Partner 2 */}
                     <h3 className='h3 mt-5'>{Auth.getName().data.username2}</h3>
-                    <button className='button'>{Auth.getName().data.username2} 's Love Language: <br /> </button>
+                    {/* <button className='button'>{Auth.getName().data.username2} 's Love Language: {loveLanguag} <br /> </button> */}
                     {/* Partner 2's Questionnaire Modal */}
                     <button className='button mt-2' data-whichuser="2" onClick={() => openModal(2)}>
                       Discover Your Love Language!
