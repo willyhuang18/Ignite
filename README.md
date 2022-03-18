@@ -16,7 +16,7 @@ Users will have access to a 'Question of the Day' that will spark conversation a
 * [License](#license)
 
 ## Demo and Site Link
-* [Ignite - Live Site](https://rocky-eyrie-31918.herokuapp.com/)
+* [Ignite - Live Site](https://fierce-sands-31159.herokuapp.com/)
 * [Ignite - Repo](https://github.com/lesliejpatino/Ignite)
 
 ![Deployed Site](client/public/dashboard-after.png)
