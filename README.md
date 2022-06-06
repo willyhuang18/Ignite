@@ -1,4 +1,4 @@
-# Ignite
+# Ignite - [Live Site](https://fierce-sands-31159.herokuapp.com/)
 
 ## Description
 Maintaining a strong and healthy relationship can be a challenge when life gets busy, and as we grow and change as individuals. We created Ignite to help couples connect, communicate, and find new ways to make one another feel loved. <br />
@@ -16,9 +16,6 @@ Users will have access to a 'Question of the Day' that will spark conversation a
 * [License](#license)
 
 ## Demo and Site Link
-* [Ignite - Live Site](https://fierce-sands-31159.herokuapp.com/)
-* [Ignite - Repo](https://github.com/lesliejpatino/Ignite)
-
 ![Deployed Site](client/public/dashboard-after.png)
 ![Site Gif](client/public/appdemo.gif)
 
